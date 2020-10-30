@@ -1,0 +1,36 @@
+.products {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__card {
+    display: block;
+  }
+
+  &__card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: .9375rem;
+  }
+
+  &__header-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: lighten($primary, 30);
+  }
+
+  &__header-title {
+    margin-left: .9375rem;
+    font-weight: bold;
+  }
+
+  &__description {
+    font-size: .875rem;
+    margin-bottom: .625rem; 
+  } 
+
+  &__variant:last-child {
+    margin-bottom: 0;
+  }
+}

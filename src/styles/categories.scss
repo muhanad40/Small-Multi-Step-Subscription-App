@@ -1,0 +1,28 @@
+.categories {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+
+  &__card {
+    display: flex;
+    align-items: center;
+    border: 3px solid transparent;
+    padding: .9375rem;
+    margin-bottom: .125rem;
+  }
+
+  &__card:hover {
+    border-color: darken($grey, 10);
+  }
+
+  &__card.selected {
+    border-color: $primary;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    color: $primary;
+    margin-right: 1.25rem;
+  }
+}

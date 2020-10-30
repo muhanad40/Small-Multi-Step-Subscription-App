@@ -1,0 +1,13 @@
+.card {
+  background: white;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+
+  p {
+    margin: 0 0 10px;
+  }
+
+  p:last-child {
+    margin: 0;
+  }
+}

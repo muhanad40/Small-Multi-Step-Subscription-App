@@ -1,0 +1,70 @@
+.form {
+
+  &__error-msg {
+    color: $red;
+    background: lighten($red, 33);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__field:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &__field-input {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid;
+  }
+
+  &__field-input:focus {
+    outline: none;
+    border: 1px solid $primary;
+  }
+
+  &__field-label {
+    margin-bottom: 5px;
+  }
+}
+
+.radio-input {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 10px;
+
+  input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__control {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 2px solid currentColor;
+  }
+
+  &__label {
+    margin-left: 10px;
+  }
+
+  &__label &__sub-label {
+    font-size: 13px;
+    color: darken($grey, 40);
+    margin-top: 3px;
+  }
+
+  &__label &__price {
+    font-weight: bold;
+  }
+
+  input[type="radio"]:checked ~ &__control {
+    border-color: $primary;
+    background: radial-gradient($primary 50%, transparent 51%);
+  }
+}

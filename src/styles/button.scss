@@ -1,0 +1,32 @@
+.button {
+  font-weight: bold;
+  padding: .9375rem;
+  border: 0;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: .625rem;
+  font-size: inherit;
+
+  &--primary {
+    color: white;
+    background: $primary;
+  }
+
+  &--primary:hover {
+    background: darken($primary, 5);
+  }
+
+  &--secondary {
+    color: darken($grey, 50);
+    background: $grey;
+  }
+
+  &--secondary:hover {
+    background: darken($grey, 5);
+  }
+
+  &--fixed-width {
+    max-width: 300px;
+  }
+}
