@@ -6,7 +6,7 @@
   &__card {
     display: flex;
     align-items: center;
-    border: 3px solid transparent;
+    border: .1875rem solid transparent;
     padding: .9375rem;
     margin-bottom: .125rem;
   }
@@ -20,8 +20,8 @@
   }
 
   &__icon {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     color: $primary;
     margin-right: 1.25rem;
   }

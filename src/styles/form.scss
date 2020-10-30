@@ -3,28 +3,28 @@
   &__error-msg {
     color: $red;
     background: lighten($red, 33);
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
   }
 
   &__field:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: .9375rem;
   }
 
   &__field-input {
     display: block;
-    padding: 10px;
+    padding: .625rem;
     width: 100%;
-    border: 1px solid;
+    border: .0625rem solid;
   }
 
   &__field-input:focus {
     outline: none;
-    border: 1px solid $primary;
+    border: .0625rem solid $primary;
   }
 
   &__field-label {
-    margin-bottom: 5px;
+    margin-bottom: .3125rem;
   }
 }
 
@@ -32,7 +32,7 @@
   display: flex;
   cursor: pointer;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: .625rem;
 
   input[type="radio"] {
     opacity: 0;
@@ -43,20 +43,20 @@
   }
 
   &__control {
-    width: 25px;
-    height: 25px;
+    width: 1.5625rem;
+    height: 1.5625rem;
     border-radius: 100%;
-    border: 2px solid currentColor;
+    border: .125rem solid currentColor;
   }
 
   &__label {
-    margin-left: 10px;
+    margin-left: .625rem;
   }
 
   &__label &__sub-label {
-    font-size: 13px;
+    font-size: .8125rem;
     color: darken($grey, 40);
-    margin-top: 3px;
+    margin-top: .1875rem;
   }
 
   &__label &__price {
