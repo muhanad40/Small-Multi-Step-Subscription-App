@@ -1,13 +1,31 @@
 import React from 'react';
 
 import Footer from './Footer';
+import InitialStep from './InitialStep';
 import CategorySelection from './CategorySelection';
 import ProductSelection from './ProductSelection';
 import ContactDetailsForm from './ContactDetailsForm';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
+import { StepTypes, useStoreContext } from '../store';
+
+type StepsMapType = {
+  [key in StepTypes]: () => JSX.Element;
+}
+
+const stepsMap: StepsMapType = {
+  [StepTypes.INITIAL]: InitialStep,
+  [StepTypes.CATEGORY_SELECTION]: CategorySelection,
+  [StepTypes.VARIANT_SELECTION]: ProductSelection,
+  [StepTypes.CONTACT_DETAILS_FORM]: ContactDetailsForm,
+  [StepTypes.ORDER_SUMMARY]: Confirmation,
+  [StepTypes.THANK_YOU]: ThankYou,
+}
 
 function App() {
+  const { state } = useStoreContext();
+  const StepComponent = stepsMap[state.currentStep];
+
   return (
     <div className="container">
       <div>
@@ -16,12 +34,7 @@ function App() {
         </svg>
 
         <div className="content">
-          {/* <button className="button button--primary">Get Started</button> */}
-          {/* <CategorySelection /> */}
-          {/* <ProductSelection /> */}
-          {/* <ContactDetailsForm /> */}
-          {/* <Confirmation /> */}
-          {/* <ThankYou /> */}
+          <StepComponent />
           <Footer />
         </div>
       </div>
