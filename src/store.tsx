@@ -9,7 +9,7 @@ export enum StepTypes {
 	THANK_YOU = 'THANK_YOU'
 }
 
-const orderedSteps = [
+export const orderedSteps = [
 	StepTypes.INITIAL,
 	StepTypes.CATEGORY_SELECTION,
 	StepTypes.VARIANT_SELECTION,
@@ -19,16 +19,16 @@ const orderedSteps = [
 ];
 
 interface State {
-  currentStep: StepTypes;
+	currentStep: StepTypes;
 }
 
 export enum ActionTypes {
-  NEXT_STEP = 'NEXT_STEP',
+	NEXT_STEP = 'NEXT_STEP',
 }
 
 interface Action {
-  type: ActionTypes;
-  payload?: StepTypes,
+	type: ActionTypes;
+	payload?: StepTypes,
 }
 
 interface StoreContextType {
