@@ -7,19 +7,19 @@ import ProductSelection from './ProductSelection';
 import ContactDetailsForm from './ContactDetailsForm';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
-import { StepTypes, useStoreContext, orderedSteps } from '../store';
+import { Steps, useStoreContext, orderedSteps } from '../store';
 
 type StepsMapType = {
-  [key in StepTypes]: () => JSX.Element;
+  [key in Steps]: () => JSX.Element;
 }
 
 const stepsMap: StepsMapType = {
-  [StepTypes.INITIAL]: InitialStep,
-  [StepTypes.CATEGORY_SELECTION]: CategorySelection,
-  [StepTypes.VARIANT_SELECTION]: ProductSelection,
-  [StepTypes.CONTACT_DETAILS_FORM]: ContactDetailsForm,
-  [StepTypes.ORDER_SUMMARY]: Confirmation,
-  [StepTypes.THANK_YOU]: ThankYou,
+  [Steps.INITIAL]: InitialStep,
+  [Steps.CATEGORY_SELECTION]: CategorySelection,
+  [Steps.VARIANT_SELECTION]: ProductSelection,
+  [Steps.CONTACT_DETAILS_FORM]: ContactDetailsForm,
+  [Steps.ORDER_SUMMARY]: Confirmation,
+  [Steps.THANK_YOU]: ThankYou,
 }
 
 function App() {

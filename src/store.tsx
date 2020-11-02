@@ -1,6 +1,6 @@
 import React, { useReducer, createContext, useContext } from "react";
 
-export enum StepTypes {
+export enum Steps {
 	INITIAL = 'INITIAL',
 	CATEGORY_SELECTION = 'CATEGORY_SELECTION',
 	VARIANT_SELECTION = 'VARIANT_SELECTION',
@@ -10,16 +10,16 @@ export enum StepTypes {
 }
 
 export const orderedSteps = [
-	StepTypes.INITIAL,
-	StepTypes.CATEGORY_SELECTION,
-	StepTypes.VARIANT_SELECTION,
-	StepTypes.CONTACT_DETAILS_FORM,
-	StepTypes.ORDER_SUMMARY,
-	StepTypes.THANK_YOU,
+	Steps.INITIAL,
+	Steps.CATEGORY_SELECTION,
+	Steps.VARIANT_SELECTION,
+	Steps.CONTACT_DETAILS_FORM,
+	Steps.ORDER_SUMMARY,
+	Steps.THANK_YOU,
 ];
 
 interface State {
-	currentStep: StepTypes;
+	currentStep: Steps;
 }
 
 export enum ActionTypes {
@@ -28,7 +28,7 @@ export enum ActionTypes {
 
 interface Action {
 	type: ActionTypes;
-	payload?: StepTypes,
+	payload?: Steps,
 }
 
 interface StoreContextType {
@@ -57,7 +57,7 @@ const reducer = (state: State, { type }: Action): State => {
 };
 
 const initState: State = {
-	currentStep: StepTypes.INITIAL,
+	currentStep: Steps.INITIAL,
 };
 
 const StoreContext = createContext<StoreContextType>({
