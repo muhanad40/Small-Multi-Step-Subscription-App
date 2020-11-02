@@ -7,7 +7,7 @@ import ProductSelection from './ProductSelection';
 import ContactDetailsForm from './ContactDetailsForm';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
-import { StepTypes, useStoreContext } from '../store';
+import { StepTypes, useStoreContext, orderedSteps } from '../store';
 
 type StepsMapType = {
   [key in StepTypes]: () => JSX.Element;
@@ -23,8 +23,10 @@ const stepsMap: StepsMapType = {
 }
 
 function App() {
-  const { state } = useStoreContext();
-  const StepComponent = stepsMap[state.currentStep];
+  const { state: { currentStep } } = useStoreContext();
+  const StepComponent = stepsMap[currentStep];
+  const isOnFirstStep = currentStep === orderedSteps[0];
+  const isOnLastStep = currentStep === orderedSteps[orderedSteps.length-1];
 
   return (
     <div className="container">
@@ -35,7 +37,11 @@ function App() {
 
         <div className="content">
           <StepComponent />
-          <Footer />
+          {(!isOnFirstStep && !isOnLastStep)
+            && (
+              <Footer />
+            )
+          }
         </div>
       </div>
     </div>
