@@ -3,19 +3,23 @@
   margin: 0 0 1.25rem;
   padding: 0;
 
-  &__card {
+  &__button:focus,
+  &__button {
     display: flex;
+    width: 100%;
     align-items: center;
     border: .1875rem solid transparent;
     padding: .9375rem;
     margin-bottom: .125rem;
+    cursor: pointer;
+    outline: none;
   }
 
-  &__card:hover {
+  &__button:hover {
     border-color: darken($grey, 10);
   }
 
-  &__card.selected {
+  &__button.selected {
     border-color: $primary;
   }
 
