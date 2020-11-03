@@ -1,4 +1,12 @@
-import React, { useReducer, createContext, useContext } from "react";
+import
+	React,
+	{
+		useReducer,
+		createContext,
+		useContext,
+		ReactElement,
+	}
+from "react";
 
 import {
 	State,
@@ -74,7 +82,7 @@ const reducer = (state: State, { type, payload }: Action): State => {
 	}
 };
 
-export function StoreProvider(props: object) {
+export function StoreProvider(props: object): ReactElement {
 	const [state, dispatch] = useReducer(reducer, initState);
 
 	return <StoreContext.Provider value={{state, dispatch}} {...props} />;
