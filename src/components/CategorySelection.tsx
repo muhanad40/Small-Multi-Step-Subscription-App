@@ -11,7 +11,7 @@ const CategorySelection = () => {
 			type: ActionTypes.SET_CATEGORY,
 			payload: categoryId,
 		});
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<>
