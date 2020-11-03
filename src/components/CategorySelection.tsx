@@ -8,7 +8,7 @@ const CategorySelection = () => {
 	const { state, dispatch } = useStoreContext();
 	const onCategoryClick = useCallback((categoryId: Category['id']) => {
 		dispatch({
-			type: ActionTypes.SET_CATEGORY,
+			type: ActionTypes.SELECT_CATEGORY,
 			payload: categoryId,
 		});
 	}, [dispatch]);

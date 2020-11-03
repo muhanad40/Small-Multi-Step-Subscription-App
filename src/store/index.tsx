@@ -42,7 +42,7 @@ const StoreContext = createContext<StoreContextType>({
 
 const reducer = (state: State, { type, payload }: Action): State => {
 	switch(type) {
-		case ActionTypes.SET_CATEGORY:
+		case ActionTypes.SELECT_CATEGORY:
 			return {
 				...state,
 				selectedCategoryId: payload,
