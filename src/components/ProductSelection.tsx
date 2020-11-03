@@ -1,72 +1,83 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useStoreContext } from '../store';
+import RadioInput from './RadioInput';
+import { ActionTypes } from '../store/types';
 
 const ProductSelection = () => {
+	const { state, dispatch } = useStoreContext();
+	const selectedCategory = state.categories[state.selectedCategoryId];
+	const categoryProducts = selectedCategory.relationships.products.data;
+	const selectProduct = useCallback((productId, variantId) => {
+		dispatch({
+			type: ActionTypes.SELECT_PRODUCT,
+			payload: {
+				productId, variantId,
+			},
+		});
+	}, [dispatch]);
+
 	return (
 		<>
 			<h1>Select the product you want to subscribe to:</h1>
 			<ul className="products">
-				<li>
-					<div className="card products__card">
-						<div className="products__card-header">
-							<div className="products__header-img"></div>
+				{categoryProducts.map(product => {
+					const {
+						id: productId,
+						attributes: {
+							name,
+							alt_name,
+							summary
+						},
+						relationships: {
+							product_variants: {
+								data: productVariants,
+							},
+						}
+					} = state.products[product.id];
 
-							<span className="products__header-title">Erectile dysfunction</span>
-						</div>
+					return (
+						<li key={productId}>
+							<div className="card products__card">
+								<div className="products__card-header">
+									<div className="products__header-img"></div>
 
-						<div className="products__description">
-							Finasteride is the generic version of a medicine called Propecia. It has been clinically proven to be an effective treatment for male-pattern hair loss in 9 out of 10 men.
-						</div>
+									<span className="products__header-title">{name} {alt_name && `(${alt_name})`}</span>
+								</div>
 
-						<label htmlFor="check1" className="radio-input products__variant">
-							<input id="check1" type="radio" name="variant-selection" />
-							<div className="radio-input__control"></div>
-							<div className="radio-input__label">
-								1mg 28 tablets - <span className="radio-input__price">£25.00</span>
-								<div className="radio-input__sub-label">Every month</div>
+								<div className="products__description">
+									{summary}
+								</div>
+
+								{productVariants.map(productVariant => {
+									const {
+										id: variantId,
+										attributes: {
+											variant,
+											price,
+											subscription_frequency,
+										}
+									} = state.productVariants[productVariant.id];;
+
+									return (
+										<RadioInput
+											key={variantId}
+											id={variantId}
+											name={variant}
+											price={price}
+											selected={state.selectedProductVariantId === variantId}
+											frequency={subscription_frequency}
+											onChange={(e) => {
+												if (e.target.checked) {
+													selectProduct(productId, variantId);
+												}
+											}}
+										/>
+									);
+								})}
 							</div>
-						</label>
-
-						<label htmlFor="check2" className="radio-input products__variant">
-							<input id="check2" type="radio" name="variant-selection" />
-							<div className="radio-input__control"></div>
-							<div className="radio-input__label">
-								1mg 28 tablets - <span className="radio-input__price">£25.00</span>
-								<div className="radio-input__sub-label">Every month</div>
-							</div>
-						</label>
-					</div>
-				</li>
-				<li>
-					<div className="card products__card">
-						<div className="products__card-header">
-							<div className="products__header-img"></div>
-
-							<span className="products__header-title">Erectile dysfunction</span>
-						</div>
-
-						<div className="products__description">
-							Finasteride is the generic version of a medicine called Propecia. It has been clinically proven to be an effective treatment for male-pattern hair loss in 9 out of 10 men.
-						</div>
-
-						<label htmlFor="check3" className="radio-input products__variant">
-							<input id="check3" type="radio" name="variant-selection" />
-							<div className="radio-input__control"></div>
-							<div className="radio-input__label">
-								1mg 28 tablets - <span className="radio-input__price">£25.00</span>
-								<div className="radio-input__sub-label">Every month</div>
-							</div>
-						</label>
-
-						<label htmlFor="check4" className="radio-input products__variant">
-							<input id="check4" type="radio" name="variant-selection" />
-							<div className="radio-input__control"></div>
-							<div className="radio-input__label">
-								1mg 28 tablets - <span className="radio-input__price">£25.00</span>
-								<div className="radio-input__sub-label">Every month</div>
-							</div>
-						</label>
-					</div>
-				</li>
+						</li>
+					);
+				})}
 			</ul>
 		</>
 	);

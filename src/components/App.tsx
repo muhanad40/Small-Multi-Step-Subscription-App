@@ -66,7 +66,7 @@ function App() {
 					} else if (item.type === 'product_variant') {
 						productsVariants[item.id] = item;
 					}
-				});
+        });
 
 				// Store categories
 				dispatch({
@@ -76,7 +76,7 @@ function App() {
 
 				// Store products
 				dispatch({
-					type: ActionTypes.STORE_PRODUCTS_VARIANTS,
+					type: ActionTypes.STORE_PRODUCTS,
 					payload: products,
 				});
 

@@ -31,7 +31,9 @@ const initState: State = {
 	categories: {},
 	products: {},
 	productVariants: {},
-	selectedCategoryId: null,
+	selectedCategoryId: '',
+	selectedProductId: '',
+	selectedProductVariantId: '',
 	isCurrentStepValid: false,
 };
 
@@ -48,6 +50,17 @@ const reducer = (state: State, { type, payload }: Action): State => {
 				selectedCategoryId: payload,
 				isCurrentStepValid: true,
 			};
+
+		case ActionTypes.SELECT_PRODUCT: {
+			const { productId, variantId } = payload;
+
+			return {
+				...state,
+				selectedProductId: productId,
+				selectedProductVariantId: variantId,
+				isCurrentStepValid: true,
+			};
+		}
 
 		case ActionTypes.SET_LOADING_STATUS:
 			return {
@@ -78,7 +91,19 @@ const reducer = (state: State, { type, payload }: Action): State => {
 		case ActionTypes.STORE_CATEGORIES:
 			return {
 				...state,
-				categories: payload as State['categories'],
+				categories: payload,
+			}
+
+		case ActionTypes.STORE_PRODUCTS:
+			return {
+				...state,
+				products: payload,
+			}
+
+		case ActionTypes.STORE_PRODUCTS_VARIANTS:
+			return {
+				...state,
+				productVariants: payload,
 			}
 
 		default:

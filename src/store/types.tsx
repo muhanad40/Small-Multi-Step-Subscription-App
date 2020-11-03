@@ -7,28 +7,51 @@ export enum Steps {
 	THANK_YOU = 'THANK_YOU'
 }
 
-export interface Category {
+interface BaseResponseType {
 	id: string;
-	type: 'product_category';
+	type: string;
 	attributes: {
 		name: string;
+		alt_name: string;
+		summary: string;
+	};
+	relationships: {};
+}
+
+export interface Category extends BaseResponseType {
+	type: 'product_category';
+	relationships: {
+		products: {
+			data: Product[];
+		};
 	};
 }
 
-export interface Product {
-	id: string;
+export interface Product extends BaseResponseType {
 	type: 'product';
+	relationships: {
+		product_variants: {
+			data: ProductVariant[];
+		};
+	};
 }
 
-export interface ProductVariant {
-	id: string;
+export interface ProductVariant extends BaseResponseType {
 	type: 'product_variant';
+	price: number;
+	attributes: BaseResponseType['attributes'] & {
+		price: number;
+		variant: string;
+		subscription_frequency: string;
+	}
 }
 
 export interface State {
 	currentStep: Steps;
 	isLoading: boolean;
-	selectedCategoryId: string | null;
+	selectedCategoryId: string;
+	selectedProductId: string;
+	selectedProductVariantId: string;
 	isCurrentStepValid: boolean;
 	categories: {
 		[id: string]: Category;
@@ -49,6 +72,7 @@ export enum ActionTypes {
 	STORE_PRODUCTS = 'STORE_PRODUCTS',
 	STORE_PRODUCTS_VARIANTS = 'STORE_PRODUCTS_VARIANTS',
 	SELECT_CATEGORY = 'SELECT_CATEGORY',
+	SELECT_PRODUCT = 'SELECT_PRODUCT',
 }
 
 export interface Action {
