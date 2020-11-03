@@ -26,7 +26,7 @@ const CategorySelection = () => {
 					});
 
 					return (
-						<li>
+						<li key={category.id}>
 							<button className={classes} onClick={() => onCategoryClick(category.id)}>
 								{/* TODO: This is a placeholder. Use correct icons for each category */}
 								<svg className="categories__icon" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
