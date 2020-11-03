@@ -9,6 +9,21 @@ export enum Steps {
 	THANK_YOU = 'THANK_YOU'
 }
 
+export interface Category {
+	id: string;
+	type: 'product_category';
+}
+
+export interface Product {
+	id: string;
+	type: 'product';
+}
+
+export interface ProductVariant {
+	id: string;
+	type: 'product_variant';
+}
+
 export const orderedSteps = [
 	Steps.INITIAL,
 	Steps.CATEGORY_SELECTION,
@@ -20,15 +35,29 @@ export const orderedSteps = [
 
 interface State {
 	currentStep: Steps;
+	isLoading: boolean;
+	categories: {
+		[id: string]: Category;
+	};
+	products: {
+		[id: string]: Product;
+	};
+	variants: {
+		[id: string]: ProductVariant;
+	};
 }
 
 export enum ActionTypes {
 	NEXT_STEP = 'NEXT_STEP',
+	SET_LOADING_STATUS = 'SET_LOADING_STATUS',
+	STORE_CATEGORIES = 'STORE_CATEGORIES',
+	STORE_PRODUCTS = 'STORE_PRODUCTS',
+	STORE_PRODUCTS_VARIANTS = 'STORE_PRODUCTS_VARIANTS',
 }
 
 interface Action {
 	type: ActionTypes;
-	payload?: Steps,
+	payload?: Steps | boolean | object;
 }
 
 interface StoreContextType {
@@ -36,8 +65,14 @@ interface StoreContextType {
 	dispatch: React.Dispatch<Action>;
 }
 
-const reducer = (state: State, { type }: Action): State => {
+const reducer = (state: State, { type, payload }: Action): State => {
 	switch(type) {
+		case ActionTypes.SET_LOADING_STATUS:
+			return {
+				...state,
+				isLoading: payload as boolean,
+			};
+
 		case ActionTypes.NEXT_STEP:
 			// Work out which step is next
 			const currentStepIndex = orderedSteps.indexOf(state.currentStep);
@@ -51,6 +86,13 @@ const reducer = (state: State, { type }: Action): State => {
 				...state,
 				currentStep: orderedSteps[currentStepIndex+1],
 			};
+
+		case ActionTypes.STORE_CATEGORIES:
+			return {
+				...state,
+				categories: payload as State['categories'],
+			}
+
 		default:
 			return state;
 	}
@@ -58,6 +100,10 @@ const reducer = (state: State, { type }: Action): State => {
 
 const initState: State = {
 	currentStep: Steps.INITIAL,
+	isLoading: true,
+	categories: {},
+	products: {},
+	variants: {},
 };
 
 const StoreContext = createContext<StoreContextType>({
