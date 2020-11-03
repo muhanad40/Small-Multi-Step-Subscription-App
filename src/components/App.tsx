@@ -104,7 +104,7 @@ function App() {
         <div className="content">
           {isLoading
             ? (
-              <span>Loading...</span>
+              <h1>Loading...</h1>
             )
             : (
               <>
