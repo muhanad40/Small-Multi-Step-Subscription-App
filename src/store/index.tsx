@@ -17,8 +17,28 @@ export const orderedSteps = [
 	Steps.THANK_YOU,
 ];
 
+const initState: State = {
+	currentStep: Steps.INITIAL,
+	isLoading: true,
+	categories: {},
+	products: {},
+	productVariants: {},
+	selectedCategoryId: null,
+};
+
+const StoreContext = createContext<StoreContextType>({
+	state: initState,
+	dispatch: () => null,
+});
+
 const reducer = (state: State, { type, payload }: Action): State => {
 	switch(type) {
+		case ActionTypes.SET_CATEGORY:
+			return {
+				...state,
+				selectedCategoryId: payload,
+			};
+
 		case ActionTypes.SET_LOADING_STATUS:
 			return {
 				...state,
@@ -49,19 +69,6 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			return state;
 	}
 };
-
-const initState: State = {
-	currentStep: Steps.INITIAL,
-	isLoading: true,
-	categories: {},
-	products: {},
-	variants: {},
-};
-
-const StoreContext = createContext<StoreContextType>({
-	state: initState,
-	dispatch: () => null,
-});
 
 export function StoreProvider(props: object) {
 	const [state, dispatch] = useReducer(reducer, initState);

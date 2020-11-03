@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 
 import Footer from './Footer';
 import InitialStep from './InitialStep';
@@ -8,7 +8,14 @@ import ContactDetailsForm from './ContactDetailsForm';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
 import { useStoreContext, orderedSteps } from '../store';
-import { Steps } from '../store/types';
+import {
+  Steps,
+  Category,
+  Product,
+  ProductVariant,
+  ActionTypes,
+  State,
+} from '../store/types';
 
 type StepsMapType = {
   [key in Steps]: () => JSX.Element;
@@ -23,11 +30,69 @@ const stepsMap: StepsMapType = {
   [Steps.THANK_YOU]: ThankYou,
 }
 
+interface FetchResponse {
+	data: Category[];
+	included: [Product | ProductVariant];
+}
+
 function App() {
-  const { state: { currentStep } } = useStoreContext();
+  const { state: {
+    currentStep,
+    isLoading,
+  }, dispatch } = useStoreContext();
   const StepComponent = stepsMap[currentStep];
   const isOnFirstStep = currentStep === orderedSteps[0];
   const isOnLastStep = currentStep === orderedSteps[orderedSteps.length-1];
+  const fetchData = useCallback(() => {
+		return fetch('https://testapi.numan.com/v1/product_categories')
+			.then(res => res.json());
+	}, []);
+
+  // Fetch data on initial render
+	useEffect(() => {
+		fetchData()
+			.then(({ data, included }: FetchResponse) => {
+        const categories: State['categories'] = {};
+				const products: State['products'] = {};
+				const productsVariants: State['productVariants'] = {};
+
+        // Prepare data
+        data.forEach((category: Category) => {
+          categories[category.id] = category;
+        });
+				included.forEach((item : ProductVariant | Product) => {
+					if (item.type === 'product') {
+						products[item.id] = item;
+					} else if (item.type === 'product_variant') {
+						productsVariants[item.id] = item;
+					}
+				});
+
+				// Store categories
+				dispatch({
+					type: ActionTypes.STORE_CATEGORIES,
+					payload: categories,
+        });
+
+				// Store products
+				dispatch({
+					type: ActionTypes.STORE_PRODUCTS_VARIANTS,
+					payload: products,
+				});
+
+				// Store products
+				dispatch({
+					type: ActionTypes.STORE_PRODUCTS_VARIANTS,
+					payload: productsVariants,
+				});
+
+				// Set loading state to false
+				dispatch({
+					type: ActionTypes.SET_LOADING_STATUS,
+					payload: false,
+				});
+			});
+	}, [dispatch, fetchData]);
 
   return (
     <div className="container">
@@ -37,10 +102,19 @@ function App() {
         </svg>
 
         <div className="content">
-          <StepComponent />
-          {(!isOnFirstStep && !isOnLastStep)
-            && (
-              <Footer />
+          {isLoading
+            ? (
+              <span>Loading...</span>
+            )
+            : (
+              <>
+                <StepComponent />
+                {(!isOnFirstStep && !isOnLastStep)
+                  && (
+                    <Footer />
+                  )
+                }
+              </>
             )
           }
         </div>

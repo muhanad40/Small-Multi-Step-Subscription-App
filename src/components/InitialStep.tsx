@@ -1,78 +1,18 @@
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
 
 import { useStoreContext } from '../store';
-import {
-	ActionTypes,
-	Category,
-	ProductVariant,
-	Product,
-} from '../store/types';
-
-interface FetchResponse {
-	data: Category[];
-	included: [Product | ProductVariant]
-}
+import { ActionTypes } from '../store/types';
 
 const InitialStep = () => {
-	const { state, dispatch } = useStoreContext();
+	const { dispatch } = useStoreContext();
 
-	const fetchData = useCallback(() => {
-		return fetch('https://testapi.numan.com/v1/product_categories')
-			.then(res => res.json());
-	}, []);
-
-	// Fetch data on initial render
-	useEffect(() => {
-		fetchData()
-			.then(({ data, included }: FetchResponse) => {
-				const products: {[key: string]: Product} = {};
-				const productsVariants: {[key: string]: ProductVariant} = {};
-
-				// Store categories
-				dispatch({
-					type: ActionTypes.STORE_CATEGORIES,
-					payload: data,
-				});
-
-				included.forEach((item : ProductVariant | Product) => {
-					if (item.type === 'product') {
-						products[item.id] = item;
-					} else if (item.type === 'product_variant') {
-						productsVariants[item.id] = item;
-					}
-				});
-
-				// Store products
-				dispatch({
-					type: ActionTypes.STORE_PRODUCTS_VARIANTS,
-					payload: products,
-				});
-
-				// Store products
-				dispatch({
-					type: ActionTypes.STORE_PRODUCTS_VARIANTS,
-					payload: productsVariants,
-				});
-
-				// Set loading state to false
-				dispatch({
-					type: ActionTypes.SET_LOADING_STATUS,
-					payload: false,
-				});
+	return (
+		<button className="button button--primary" onClick={() => {
+			dispatch({
+				type: ActionTypes.NEXT_STEP,
 			});
-	}, [dispatch, fetchData]);
-
-	return state.isLoading
-		? (
-			<span>Loading...</span>
-		)
-		: (
-			<button className="button button--primary" onClick={() => {
-				dispatch({
-					type: ActionTypes.NEXT_STEP,
-				});
-			}}>Get Started</button>
-		)
+		}}>Get Started</button>
+	);
 }
 
 export default InitialStep;

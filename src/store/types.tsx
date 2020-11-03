@@ -25,13 +25,14 @@ export interface ProductVariant {
 export interface State {
 	currentStep: Steps;
 	isLoading: boolean;
+	selectedCategoryId: string | null;
 	categories: {
 		[id: string]: Category;
 	};
 	products: {
 		[id: string]: Product;
 	};
-	variants: {
+	productVariants: {
 		[id: string]: ProductVariant;
 	};
 }
@@ -42,11 +43,13 @@ export enum ActionTypes {
 	STORE_CATEGORIES = 'STORE_CATEGORIES',
 	STORE_PRODUCTS = 'STORE_PRODUCTS',
 	STORE_PRODUCTS_VARIANTS = 'STORE_PRODUCTS_VARIANTS',
+	SET_CATEGORY = 'SET_CATEGORY',
 }
 
 export interface Action {
 	type: ActionTypes;
-	payload?: Steps | boolean | object;
+	// TODO: Remove `any` and use specific types!
+	payload?: any;
 }
 
 export interface StoreContextType {
