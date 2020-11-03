@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect } from 'react';
 
+import { useStoreContext } from '../store';
 import {
 	ActionTypes,
-	useStoreContext,
 	Category,
 	ProductVariant,
 	Product,
-} from '../store';
+} from '../store/types';
 
 interface FetchResponse {
 	data: Category[];

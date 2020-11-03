@@ -7,7 +7,8 @@ import ProductSelection from './ProductSelection';
 import ContactDetailsForm from './ContactDetailsForm';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
-import { Steps, useStoreContext, orderedSteps } from '../store';
+import { useStoreContext, orderedSteps } from '../store';
+import { Steps } from '../store/types';
 
 type StepsMapType = {
   [key in Steps]: () => JSX.Element;
