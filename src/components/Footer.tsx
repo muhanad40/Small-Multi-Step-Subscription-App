@@ -2,16 +2,23 @@ import React from 'react';
 import { useStoreContext } from '../store';
 import { ActionTypes, Steps } from '../store/types';
 
+
 const Footer = () => {
 	const { state, dispatch } = useStoreContext();
 
 	return (
 		<>
-			<button className="button button--primary" disabled onClick={() => {
-				dispatch({
-					type: ActionTypes.NEXT_STEP,
-				});
-			}}>Next</button>
+			<button
+				className="button button--primary"
+				disabled={!state.isCurrentStepValid}
+				onClick={() => {
+					dispatch({
+						type: ActionTypes.NEXT_STEP,
+					});
+				}}
+			>
+				Next
+			</button>
 
 			{state.currentStep !== Steps.CATEGORY_SELECTION
 				&& (

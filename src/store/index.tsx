@@ -32,6 +32,7 @@ const initState: State = {
 	products: {},
 	productVariants: {},
 	selectedCategoryId: null,
+	isCurrentStepValid: false,
 };
 
 const StoreContext = createContext<StoreContextType>({
@@ -45,6 +46,7 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			return {
 				...state,
 				selectedCategoryId: payload,
+				isCurrentStepValid: true,
 			};
 
 		case ActionTypes.SET_LOADING_STATUS:
@@ -59,6 +61,7 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			return {
 				...state,
 				currentStep: orderedSteps[currentStepIndex + 1],
+				isCurrentStepValid: false,
 			};
 		}
 
@@ -68,6 +71,7 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			return {
 				...state,
 				currentStep: orderedSteps[currentStepIndex - 1],
+				isCurrentStepValid: true,
 			};
 		}
 

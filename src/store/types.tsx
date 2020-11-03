@@ -29,6 +29,7 @@ export interface State {
 	currentStep: Steps;
 	isLoading: boolean;
 	selectedCategoryId: string | null;
+	isCurrentStepValid: boolean;
 	categories: {
 		[id: string]: Category;
 	};
