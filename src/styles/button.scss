@@ -13,7 +13,7 @@
     background: $primary;
   }
 
-  &--primary:hover {
+  &--primary:not(:disabled):hover {
     background: darken($primary, 5);
   }
 
@@ -28,5 +28,10 @@
 
   &--fixed-width {
     max-width: 18.75rem;
+  }
+
+  &:disabled {
+    opacity: .4;
+    cursor: inherit;
   }
 }
