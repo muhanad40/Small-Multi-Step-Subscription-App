@@ -32,7 +32,7 @@ const stepsMap: StepsMapType = {
 
 interface FetchResponse {
 	data: Category[];
-	included: [Product | ProductVariant];
+	included: (Product | ProductVariant)[];
 }
 
 function App() {
@@ -60,12 +60,13 @@ function App() {
         data.forEach((category: Category) => {
           categories[category.id] = category;
         });
-				included.forEach((item : ProductVariant | Product) => {
-					if (item.type === 'product') {
-						products[item.id] = item;
-					} else if (item.type === 'product_variant') {
-						productsVariants[item.id] = item;
-					}
+
+        included.forEach((item) => {
+          if (item.type === 'product') {
+            products[item.id] = item;
+          } else if (item.type === 'product_variant') {
+            productsVariants[item.id] = item;
+          }
         });
 
 				// Store categories

@@ -1,10 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useMemo } from 'react';
 import { useStoreContext } from '../store';
 import RadioInput from './RadioInput';
-import { ActionTypes } from '../store/types';
+import { ActionTypes, Product, ProductVariant } from '../store/types';
 
 const ProductSelection = () => {
 	const { state, dispatch } = useStoreContext();
+	const [sortedProducts, setSortedProducts] = useState<Product[]>([]);
 	const selectedCategory = state.categories[state.selectedCategoryId];
 	const categoryProducts = selectedCategory.relationships.products.data;
 	const selectProduct = useCallback((productId, variantId) => {
@@ -15,12 +16,50 @@ const ProductSelection = () => {
 			},
 		});
 	}, [dispatch]);
+	const sortByTitleAsc = useCallback((products: Product[]) => {
+		return products.sort((prodA, prodB) => {
+			if (prodA.attributes.name[0] < prodB.attributes.name[0]) {
+				return -1;
+			} else {
+				return 1
+			}
+		})
+	}, []);
+	const sortByPriceDesc = useCallback((products: ProductVariant[]) => {
+		return products.sort(({ attributes: { price: priceA }}, { attributes: { price: priceB }}) => {
+			if (priceA > priceB) {
+				return -1;
+			} else {
+				return 1
+			}
+		})
+	}, []);
+
+	useMemo(() => {
+		const sorted = categoryProducts
+			.map(({ id }) => {
+				const result = state.products[id];
+				const variants = state.products[id].relationships.product_variants.data.map((productVariant) => {
+						return {
+							...productVariant,
+							...state.productVariants[productVariant.id],
+						}
+					});
+				const sortedVariants = sortByPriceDesc(variants);
+
+				state.products[id].relationships.product_variants.data = sortedVariants;
+
+				return result;
+			});
+
+		setSortedProducts(sortByTitleAsc(sorted));
+	}, [state.products, categoryProducts, sortByPriceDesc, sortByTitleAsc, state.productVariants]);
 
 	return (
 		<>
 			<h1>Select the product you want to subscribe to:</h1>
 			<ul className="products">
-				{categoryProducts.map(product => {
+				{sortedProducts.map(product => {
 					const {
 						id: productId,
 						attributes: {
@@ -56,7 +95,7 @@ const ProductSelection = () => {
 											price,
 											subscription_frequency,
 										}
-									} = state.productVariants[productVariant.id];;
+									} = productVariant;
 
 									return (
 										<RadioInput

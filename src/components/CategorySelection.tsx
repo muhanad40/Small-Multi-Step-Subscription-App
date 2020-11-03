@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import classNames from 'classnames';
 
 import { useStoreContext } from '../store';
@@ -6,6 +6,7 @@ import { Category, ActionTypes } from '../store/types';
 
 const CategorySelection = () => {
 	const { state, dispatch } = useStoreContext();
+	const [sortedCategories, setSortedCategories] = useState<Category[]>([]);
 	const onCategoryClick = useCallback((categoryId: Category['id']) => {
 		dispatch({
 			type: ActionTypes.SELECT_CATEGORY,
@@ -13,12 +14,22 @@ const CategorySelection = () => {
 		});
 	}, [dispatch]);
 
+	useMemo(() => {
+		const sorted = Object.values(state.categories).sort((catA, catB) => {
+			if (catA.attributes.name[0] < catB.attributes.name[0]) {
+				return -1;
+			} else {
+				return 1
+			}
+		});
+		setSortedCategories(sorted);
+	}, [state.categories]);
+
 	return (
 		<>
 			<h1>What do you need help with?</h1>
 			<ul className="categories">
-				{Object.keys(state.categories).map((catKey) => {
-					const category = state.categories[catKey];
+				{sortedCategories.map((category) => {
 					const classes = classNames({
 						card: true,
 						categories__button: true,
