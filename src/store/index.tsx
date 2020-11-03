@@ -45,19 +45,23 @@ const reducer = (state: State, { type, payload }: Action): State => {
 				isLoading: payload as boolean,
 			};
 
-		case ActionTypes.NEXT_STEP:
-			// Work out which step is next
+		case ActionTypes.NEXT_STEP: {
 			const currentStepIndex = orderedSteps.indexOf(state.currentStep);
-
-			// Did we reach the last step?
-			if (currentStepIndex === orderedSteps.length - 1) {
-				return state;
-			}
 
 			return {
 				...state,
-				currentStep: orderedSteps[currentStepIndex+1],
+				currentStep: orderedSteps[currentStepIndex + 1],
 			};
+		}
+
+		case ActionTypes.PREVIOUS_STEP: {
+			const currentStepIndex = orderedSteps.indexOf(state.currentStep);
+
+			return {
+				...state,
+				currentStep: orderedSteps[currentStepIndex - 1],
+			};
+		}
 
 		case ActionTypes.STORE_CATEGORIES:
 			return {
