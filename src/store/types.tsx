@@ -10,6 +10,9 @@ export enum Steps {
 export interface Category {
 	id: string;
 	type: 'product_category';
+	attributes: {
+		name: string;
+	};
 }
 
 export interface Product {
