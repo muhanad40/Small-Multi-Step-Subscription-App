@@ -7,9 +7,12 @@ export enum Steps {
 	THANK_YOU = 'THANK_YOU'
 }
 
-interface BaseResponseType {
+interface BaseObjectRef {
 	id: string;
 	type: string;
+}
+
+interface BaseObject extends BaseObjectRef {
 	attributes: {
 		name: string;
 		alt_name: string;
@@ -18,7 +21,7 @@ interface BaseResponseType {
 	relationships: {};
 }
 
-export interface Category extends BaseResponseType {
+export interface Category extends BaseObject {
 	type: 'product_category';
 	relationships: {
 		products: {
@@ -27,31 +30,35 @@ export interface Category extends BaseResponseType {
 	};
 }
 
-export interface Product extends BaseResponseType {
+export interface Product extends BaseObject {
 	type: 'product';
 	relationships: {
+		default_product_variant: {
+			data: BaseObjectRef,
+		},
 		product_variants: {
 			data: ProductVariant[];
 		};
 	};
 }
 
-export interface ProductVariant extends BaseResponseType {
+export interface ProductVariant extends BaseObject {
 	type: 'product_variant';
 	price: number;
-	attributes: BaseResponseType['attributes'] & {
+	attributes: BaseObject['attributes'] & {
 		price: number;
 		variant: string;
 		subscription_frequency: string;
-	}
+	},
 }
 
 export interface State {
 	currentStep: Steps;
 	isLoading: boolean;
 	selectedCategoryId: string;
-	selectedProductId: string;
-	selectedProductVariantId: string;
+	selectedProductVariants: {
+		[key: string]: ProductVariant['id'];
+	};
 	isCurrentStepValid: boolean;
 	categories: {
 		[id: string]: Category;
@@ -72,7 +79,8 @@ export enum ActionTypes {
 	STORE_PRODUCTS = 'STORE_PRODUCTS',
 	STORE_PRODUCTS_VARIANTS = 'STORE_PRODUCTS_VARIANTS',
 	SELECT_CATEGORY = 'SELECT_CATEGORY',
-	SELECT_PRODUCT = 'SELECT_PRODUCT',
+	PRESELECT_PRODUCT_VARIANTS = 'PRESELECT_PRODUCT_VARIANTS',
+	SELECT_PRODUCT_VARIANT = 'SELECT_PRODUCT_VARIANT',
 }
 
 export interface Action {

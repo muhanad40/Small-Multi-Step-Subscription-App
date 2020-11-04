@@ -1,7 +1,7 @@
-import React, { useCallback, useState, useMemo } from 'react';
+import React, { useCallback, useState, useMemo, useEffect } from 'react';
 import { useStoreContext } from '../store';
 import RadioInput from './RadioInput';
-import { ActionTypes, Product, ProductVariant } from '../store/types';
+import { ActionTypes, Product, ProductVariant, State } from '../store/types';
 
 const ProductSelection = () => {
 	const { state, dispatch } = useStoreContext();
@@ -10,7 +10,7 @@ const ProductSelection = () => {
 	const categoryProducts = selectedCategory.relationships.products.data;
 	const selectProduct = useCallback((productId, variantId) => {
 		dispatch({
-			type: ActionTypes.SELECT_PRODUCT,
+			type: ActionTypes.SELECT_PRODUCT_VARIANT,
 			payload: {
 				productId, variantId,
 			},
@@ -34,6 +34,20 @@ const ProductSelection = () => {
 			}
 		})
 	}, []);
+
+	useEffect(() => {
+		// Pre-select default variants
+		const preselected: State['selectedProductVariants'] = {};
+
+		sortedProducts.forEach((product) => {
+			preselected[product.id] = product.relationships.default_product_variant.data.id;
+		});
+
+		dispatch({
+			type: ActionTypes.PRESELECT_PRODUCT_VARIANTS,
+			payload: preselected,
+		});
+	}, [sortedProducts, dispatch]);
 
 	useMemo(() => {
 		const sorted = categoryProducts
@@ -101,9 +115,9 @@ const ProductSelection = () => {
 										<RadioInput
 											key={variantId}
 											id={variantId}
-											name={variant}
+											label={variant}
 											price={price}
-											selected={state.selectedProductVariantId === variantId}
+											selected={state.selectedProductVariants[productId] === variantId}
 											frequency={subscription_frequency}
 											onChange={(e) => {
 												if (e.target.checked) {

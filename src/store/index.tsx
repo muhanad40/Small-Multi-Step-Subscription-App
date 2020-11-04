@@ -32,8 +32,7 @@ const initState: State = {
 	products: {},
 	productVariants: {},
 	selectedCategoryId: '',
-	selectedProductId: '',
-	selectedProductVariantId: '',
+	selectedProductVariants: {},
 	isCurrentStepValid: false,
 };
 
@@ -51,13 +50,21 @@ const reducer = (state: State, { type, payload }: Action): State => {
 				isCurrentStepValid: true,
 			};
 
-		case ActionTypes.SELECT_PRODUCT: {
-			const { productId, variantId } = payload;
-
+		case ActionTypes.PRESELECT_PRODUCT_VARIANTS: {
 			return {
 				...state,
-				selectedProductId: productId,
-				selectedProductVariantId: variantId,
+				selectedProductVariants: payload,
+				isCurrentStepValid: true,
+			};
+		}
+
+		case ActionTypes.SELECT_PRODUCT_VARIANT: {
+			return {
+				...state,
+				selectedProductVariants: {
+					...state.selectedProductVariants,
+					[payload.productId]: payload.variantId,
+				},
 				isCurrentStepValid: true,
 			};
 		}

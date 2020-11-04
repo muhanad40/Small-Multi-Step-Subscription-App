@@ -2,7 +2,7 @@ import React, { ReactElement, ChangeEvent } from 'react';
 
 interface Props {
 	id: string;
-	name: string;
+	label: string;
 	price: number;
 	selected: boolean;
 	frequency: string;
@@ -47,19 +47,18 @@ function parseFrequency(frequency: string): string {
 	return sentence.join(' ');
 }
 
-const RadioInput = ({ id, name, price, selected, onChange, frequency }: Props): ReactElement => (
+const RadioInput = ({ id, price, selected, onChange, frequency, label }: Props): ReactElement => (
 	<label htmlFor={id} className="radio-input products__variant">
 		<input
 			id={id}
 			type="radio"
-			name="variant-selection"
 			value={id}
 			checked={selected}
 			onChange={onChange}
 		/>
 		<div className="radio-input__control"></div>
 		<div className="radio-input__label">
-			{name} - <span className="radio-input__price">£{(price/100).toFixed(2)}</span>
+			{label} - <span className="radio-input__price">£{(price/100).toFixed(2)}</span>
 			<div className="radio-input__sub-label">{parseFrequency(frequency)}</div>
 		</div>
 	</label>
