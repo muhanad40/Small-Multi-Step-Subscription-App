@@ -71,7 +71,7 @@ const ProductSelection = () => {
 
 	return (
 		<>
-			<h1>Select the product you want to subscribe to:</h1>
+			<h1>Select the products you want to subscribe to:</h1>
 			<ul className="products">
 				{sortedProducts.map(product => {
 					const {
