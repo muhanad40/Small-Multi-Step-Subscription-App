@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState, useEffect } from 'react';
 import classNames from 'classnames';
 
 import { useStoreContext } from '../store';
@@ -24,6 +24,14 @@ const CategorySelection = () => {
 		});
 		setSortedCategories(sorted);
 	}, [state.categories]);
+
+	useEffect(() => {
+		dispatch({
+			type: ActionTypes.SET_STEP_VALIDITY,
+			payload: !!state.selectedCategoryId,
+		});
+
+	}, [state.selectedCategoryId, dispatch]);
 
 	return (
 		<>

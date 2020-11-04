@@ -47,14 +47,12 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			return {
 				...state,
 				selectedCategoryId: payload,
-				isCurrentStepValid: true,
 			};
 
 		case ActionTypes.PRESELECT_PRODUCT_VARIANTS: {
 			return {
 				...state,
 				selectedProductVariants: payload,
-				isCurrentStepValid: true,
 			};
 		}
 
@@ -65,9 +63,14 @@ const reducer = (state: State, { type, payload }: Action): State => {
 					...state.selectedProductVariants,
 					[payload.productId]: payload.variantId,
 				},
-				isCurrentStepValid: true,
 			};
 		}
+
+		case ActionTypes.SET_STEP_VALIDITY:
+			return {
+				...state,
+				isCurrentStepValid: payload,
+			};
 
 		case ActionTypes.SET_LOADING_STATUS:
 			return {
@@ -81,7 +84,6 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			return {
 				...state,
 				currentStep: orderedSteps[currentStepIndex + 1],
-				isCurrentStepValid: false,
 			};
 		}
 
@@ -91,7 +93,6 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			return {
 				...state,
 				currentStep: orderedSteps[currentStepIndex - 1],
-				isCurrentStepValid: true,
 			};
 		}
 
