@@ -56,6 +56,12 @@ export interface State {
 	currentStep: Steps;
 	isLoading: boolean;
 	selectedCategoryId: string;
+	contactDetails: {
+		firstName: string;
+		lastName: string;
+		phoneNumber: string;
+		email: string;
+	};
 	selectedProductVariants: {
 		[key: string]: ProductVariant['id'];
 	};

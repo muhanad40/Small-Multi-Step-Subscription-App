@@ -34,6 +34,12 @@ const initState: State = {
 	selectedCategoryId: '',
 	selectedProductVariants: {},
 	isCurrentStepValid: false,
+	contactDetails: {
+		firstName: '',
+		lastName: '',
+		phoneNumber: '',
+		email: '',
+	},
 };
 
 const StoreContext = createContext<StoreContextType>({
@@ -64,6 +70,18 @@ const reducer = (state: State, { type, payload }: Action): State => {
 					[payload.productId]: payload.variantId,
 				},
 			};
+		}
+
+		case ActionTypes.STORE_CONTACT_DETAILS: {
+			const newState: State = {
+				...state,
+				contactDetails: {
+					...state.contactDetails,
+					...payload,
+				},
+			};
+
+			return newState;
 		}
 
 		case ActionTypes.SET_STEP_VALIDITY:
