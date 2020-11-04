@@ -30,7 +30,7 @@ interface StepDataResult {
 }
 
 const Footer = () => {
-	const [nextButtonLabel, setNextButtonLabel] = useState<string>('Next');
+	const [nextButtonLabel, setNextButtonLabel] = useState<string>('Get Started');
 	const { state, dispatch } = useStoreContext();
 	const [collectedUserData, setCollectedUserData] = useState<StepDataResult>({});
 	const getStepData = useCallback((step: Steps | null) => {
@@ -82,6 +82,7 @@ const Footer = () => {
 	useEffect(() => {
 		switch(state.currentStep) {
 			case null:
+			case undefined:
 				setNextButtonLabel('Get Started');
 				break;
 
@@ -100,8 +101,9 @@ const Footer = () => {
 				(
 					<button
 						className="button button--primary"
-						disabled={!state.isCurrentStepValid}
+						disabled={state.currentStep && !state.isCurrentStepValid || false}
 						onClick={onNextClick}
+						data-testid="next-btn"
 					>
 						{nextButtonLabel}
 					</button>
