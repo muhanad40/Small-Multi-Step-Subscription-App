@@ -17,6 +17,9 @@ export interface Category extends BaseObjectRef {
 		name: string;
 	};
 	relationships: {
+		default_product: {
+			data: BaseObjectRef;
+		};
 		products: {
 			data: Product[];
 		};
@@ -61,9 +64,8 @@ export interface State {
 		phoneNumber: string;
 		email: string;
 	};
-	selectedProductVariants: {
-		[key: string]: ProductVariant['id'];
-	};
+	selectedProductId: string;
+	selectedProductVariantId: string;
 	isCurrentStepValid: boolean;
 	categories: {
 		[id: string]: Category;

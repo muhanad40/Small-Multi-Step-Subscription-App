@@ -1,21 +1,14 @@
 import React, { useCallback, useState, useMemo, useEffect } from 'react';
 import { useStoreContext } from '../store';
-import RadioInput from './RadioInput';
+
 import { ActionTypes, Product, ProductVariant, State } from '../store/types';
+import ProductCard from './ProductCard';
 
 const ProductSelection = () => {
 	const { state, dispatch } = useStoreContext();
 	const [sortedProducts, setSortedProducts] = useState<Product[]>([]);
 	const selectedCategory = state.categories[state.selectedCategoryId];
 	const categoryProducts = selectedCategory.relationships.products.data;
-	const selectProduct = useCallback((productId, variantId) => {
-		dispatch({
-			type: ActionTypes.SELECT_PRODUCT_VARIANT,
-			payload: {
-				productId, variantId,
-			},
-		});
-	}, [dispatch]);
 	const sortByTitleAsc = useCallback((products: Product[]) => {
 		return products.sort((prodA, prodB) => {
 			if (prodA.attributes.name[0] < prodB.attributes.name[0]) {
@@ -36,26 +29,29 @@ const ProductSelection = () => {
 	}, []);
 
 	useEffect(() => {
-		// Pre-select default variants
-		const preselected: State['selectedProductVariants'] = {};
+		// Do not pre-select if user already selected a product variant
+		if (state.selectedProductVariantId) return;
 
-		sortedProducts.forEach((product) => {
-			preselected[product.id] = product.relationships.default_product_variant.data.id;
-		});
+		const defaultProductId = selectedCategory.relationships.default_product.data.id;
+		const defaultProduct = state.products[defaultProductId];
+		const defaultVariantId = defaultProduct.relationships.default_product_variant.data.id;
 
 		dispatch({
-			type: ActionTypes.PRESELECT_PRODUCT_VARIANTS,
-			payload: preselected,
+			type: ActionTypes.SELECT_PRODUCT_VARIANT,
+			payload: {
+				productId: defaultProductId,
+				variantId: defaultVariantId,
+			},
 		});
-	}, [sortedProducts, dispatch]);
+	}, [sortedProducts, dispatch, state.selectedProductVariantId]);
 
 	useEffect(() => {
 		dispatch({
 			type: ActionTypes.SET_STEP_VALIDITY,
-			payload: Object.values(state.selectedProductVariants).length,
+			payload: !!state.selectedProductVariantId,
 		});
 
-	}, [state.selectedProductVariants, dispatch]);
+	}, [state.selectedProductVariantId, dispatch]);
 
 	useMemo(() => {
 		const sorted = categoryProducts
@@ -81,64 +77,11 @@ const ProductSelection = () => {
 		<>
 			<h1>Select the products you want to subscribe to:</h1>
 			<ul className="products">
-				{sortedProducts.map(product => {
-					const {
-						id: productId,
-						attributes: {
-							name,
-							alt_name,
-							summary
-						},
-						relationships: {
-							product_variants: {
-								data: productVariants,
-							},
-						}
-					} = state.products[product.id];
-
-					return (
-						<li key={productId}>
-							<div className="card products__card">
-								<div className="products__card-header">
-									<div className="products__header-img"></div>
-
-									<span className="products__header-title">{name} {alt_name && `(${alt_name})`}</span>
-								</div>
-
-								<div className="products__description">
-									{summary}
-								</div>
-
-								{productVariants.map(productVariant => {
-									const {
-										id: variantId,
-										attributes: {
-											variant,
-											price,
-											subscription_frequency,
-										}
-									} = productVariant;
-
-									return (
-										<RadioInput
-											key={variantId}
-											id={variantId}
-											label={variant}
-											price={price}
-											selected={state.selectedProductVariants[productId] === variantId}
-											frequency={subscription_frequency}
-											onChange={(e) => {
-												if (e.target.checked) {
-													selectProduct(productId, variantId);
-												}
-											}}
-										/>
-									);
-								})}
-							</div>
-						</li>
-					);
-				})}
+				{sortedProducts.map(({ id }) =>(
+					<li key={id}>
+						<ProductCard {...state.products[id]} />
+					</li>
+				))}
 			</ul>
 		</>
 	);
