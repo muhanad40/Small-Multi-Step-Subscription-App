@@ -52,11 +52,15 @@ const StoreContext = createContext<StoreContextType>({
 const reducer = (state: State, { type, payload }: Action): State => {
 	switch(type) {
 		case ActionTypes.SELECT_CATEGORY:
+			const defaultProductId = state.categories[payload as Category['id']].relationships.default_product.data.id;
+			const defaultProduct = state.products[defaultProductId];
+			const defaultVariantId = defaultProduct.relationships.default_product_variant.data.id;
+
 			return {
 				...state,
 				selectedCategoryId: payload,
-				selectedProductId: '',
-				selectedProductVariantId: '',
+				selectedProductId: defaultProduct.id,
+				selectedProductVariantId: defaultVariantId,
 			};
 
 		case ActionTypes.SELECT_PRODUCT_VARIANT: {

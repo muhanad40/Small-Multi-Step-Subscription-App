@@ -29,26 +29,6 @@ const ProductSelection = () => {
 	}, []);
 
 	useEffect(() => {
-		// Do not pre-select if user already selected a product variant
-		if (state.selectedProductVariantId) return;
-
-		const defaultProductId = selectedCategory.relationships.default_product.data.id;
-		const defaultProduct = state.products[defaultProductId];
-		const defaultVariantId = defaultProduct.relationships.default_product_variant.data.id;
-
-		dispatch({
-			type: ActionTypes.SELECT_PRODUCT_VARIANT,
-			payload: {
-				productId: defaultProductId,
-				variantId: defaultVariantId,
-			},
-		});
-	}, [
-		sortedProducts, dispatch, state.selectedProductVariantId,
-		selectedCategory.relationships.default_product.data.id, state.products
-	]);
-
-	useEffect(() => {
 		dispatch({
 			type: ActionTypes.SET_STEP_VALIDITY,
 			payload: !!state.selectedProductVariantId,
