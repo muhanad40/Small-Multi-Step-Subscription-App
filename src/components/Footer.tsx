@@ -67,9 +67,10 @@ const Footer = () => {
 				user_id: state.userId,
 				data: getStepData(state.currentStep),
 			}),
-		});
-		dispatch({
-			type: ActionTypes.NEXT_STEP,
+		}).then(() => {
+			dispatch({
+				type: ActionTypes.NEXT_STEP,
+			});
 		});
 	}, [state, dispatch, getStepData]);
 	const onPreviousClick = useCallback(() => {
