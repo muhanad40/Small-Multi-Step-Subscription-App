@@ -1,12 +1,5 @@
 .form {
 
-  &__error-msg {
-    color: $red;
-    background: lighten($red, 33);
-    padding: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-
   &__field:not(:last-child) {
     margin-bottom: .9375rem;
   }

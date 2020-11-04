@@ -31,10 +31,6 @@ const ContactDetailsForm = () => {
 			<h1>Please enter your contact details:</h1>
 			<div className="card">
 				<form className="form">
-					<div className="form__error-msg">
-						Please make sure you fill out all the fields
-					</div>
-
 					<div className="form__field">
 						<label htmlFor="first-name">
 							<div className="form__field-label">First name</div>
