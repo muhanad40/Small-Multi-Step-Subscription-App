@@ -17,7 +17,7 @@ const Footer = () => {
 					});
 				}}
 			>
-				Next
+				{state.currentStep === Steps.ORDER_SUMMARY ? 'Pay Now' : 'Next'}
 			</button>
 
 			{state.currentStep !== Steps.CATEGORY_SELECTION
