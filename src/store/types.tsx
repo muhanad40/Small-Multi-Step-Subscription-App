@@ -12,17 +12,11 @@ interface BaseObjectRef {
 	type: string;
 }
 
-interface BaseObject extends BaseObjectRef {
+export interface Category extends BaseObjectRef {
+	type: 'product_category';
 	attributes: {
 		name: string;
-		alt_name: string;
-		summary: string;
 	};
-	relationships: {};
-}
-
-export interface Category extends BaseObject {
-	type: 'product_category';
 	relationships: {
 		products: {
 			data: Product[];
@@ -30,8 +24,13 @@ export interface Category extends BaseObject {
 	};
 }
 
-export interface Product extends BaseObject {
+export interface Product extends BaseObjectRef {
 	type: 'product';
+	attributes: {
+		name: string;
+		alt_name: string;
+		summary: string;
+	},
 	relationships: {
 		default_product_variant: {
 			data: BaseObjectRef,
@@ -42,10 +41,10 @@ export interface Product extends BaseObject {
 	};
 }
 
-export interface ProductVariant extends BaseObject {
+export interface ProductVariant extends BaseObjectRef {
 	type: 'product_variant';
 	price: number;
-	attributes: BaseObject['attributes'] & {
+	attributes: {
 		price: number;
 		variant: string;
 		subscription_frequency: string;
