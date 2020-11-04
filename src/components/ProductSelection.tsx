@@ -49,6 +49,14 @@ const ProductSelection = () => {
 		});
 	}, [sortedProducts, dispatch]);
 
+	useEffect(() => {
+		dispatch({
+			type: ActionTypes.SET_STEP_VALIDITY,
+			payload: Object.values(state.selectedProductVariants).length,
+		});
+
+	}, [state.selectedProductVariants, dispatch]);
+
 	useMemo(() => {
 		const sorted = categoryProducts
 			.map(({ id }) => {
