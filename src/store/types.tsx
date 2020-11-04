@@ -57,15 +57,15 @@ export interface State {
 	userId: string;
 	currentStep: Steps | null;
 	isLoading: boolean;
-	selectedCategoryId: string;
+	selectedCategoryId: Category['id'];
 	contactDetails: {
 		firstName: string;
 		lastName: string;
 		phoneNumber: string;
 		email: string;
 	};
-	selectedProductId: string;
-	selectedProductVariantId: string;
+	selectedProductId: Product['id'];
+	selectedProductVariantId: ProductVariant['id'];
 	isCurrentStepValid: boolean;
 	categories: {
 		[id: string]: Category;
