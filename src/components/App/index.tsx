@@ -42,7 +42,7 @@ function App() {
   const fetchData = useCallback(() => {
 		return fetch('https://testapi.numan.com/v1/product_categories')
 			.then(res => res.json());
-  }, [fetch]);
+  }, []);
   const generateRandomUserId = useCallback(() => {
     return Math.floor(Math.random() * Date.now());
   }, []);

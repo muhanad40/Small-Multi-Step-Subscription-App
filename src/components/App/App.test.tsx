@@ -46,7 +46,7 @@ describe('App component', () => {
 	});
 
 	it('should go back a step when Back button is clicked', async () => {
-		const { getByTestId, getByText, debug } = renderApp();
+		const { getByTestId, getByText } = renderApp();
 
 		await waitForElementToBeRemoved(() => getByTestId('loading-txt'));
 

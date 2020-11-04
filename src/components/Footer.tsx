@@ -101,7 +101,7 @@ const Footer = () => {
 				(
 					<button
 						className="button button--primary"
-						disabled={state.currentStep && !state.isCurrentStepValid || false}
+						disabled={(state.currentStep && !state.isCurrentStepValid) || false}
 						onClick={onNextClick}
 						data-testid="next-btn"
 					>
