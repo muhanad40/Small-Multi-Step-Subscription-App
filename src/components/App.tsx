@@ -47,6 +47,17 @@ function App() {
 		return fetch('https://testapi.numan.com/v1/product_categories')
 			.then(res => res.json());
 	}, []);
+  const generateRandomUserId = useCallback(() => {
+    return Math.floor(Math.random() * Date.now());
+  }, []);
+
+  // Generate random user ID and store once
+  useEffect(() => {
+    dispatch({
+      type: ActionTypes.STORE_USER_ID,
+      payload: generateRandomUserId(),
+    });
+  }, [dispatch, generateRandomUserId]);
 
   // Fetch data on initial render
 	useEffect(() => {

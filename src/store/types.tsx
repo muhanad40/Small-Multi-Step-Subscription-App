@@ -52,6 +52,7 @@ export interface ProductVariant extends BaseObjectRef {
 }
 
 export interface State {
+	userId: string;
 	currentStep: Steps;
 	isLoading: boolean;
 	selectedCategoryId: string;
@@ -77,6 +78,7 @@ export interface State {
 }
 
 export enum ActionTypes {
+	STORE_USER_ID,
 	NEXT_STEP,
 	PREVIOUS_STEP,
 	SET_LOADING_STATUS,

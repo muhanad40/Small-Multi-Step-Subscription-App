@@ -26,6 +26,7 @@ export const orderedSteps = [
 ];
 
 const initState: State = {
+	userId: '',
 	currentStep: Steps.INITIAL,
 	isLoading: true,
 	categories: {},
@@ -130,6 +131,12 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			return {
 				...state,
 				productVariants: payload,
+			}
+
+		case ActionTypes.STORE_USER_ID:
+			return {
+				...state,
+				userId: payload,
 			}
 
 		default:
