@@ -17,7 +17,7 @@ import {
 } from './types';
 
 export const orderedSteps = [
-	Steps.INITIAL,
+	// Steps.INITIAL,
 	Steps.CATEGORY_SELECTION,
 	Steps.VARIANT_SELECTION,
 	Steps.CONTACT_DETAILS_FORM,
@@ -27,14 +27,14 @@ export const orderedSteps = [
 
 const initState: State = {
 	userId: '',
-	currentStep: Steps.INITIAL,
+	currentStep: null,
 	isLoading: true,
 	categories: {},
 	products: {},
 	productVariants: {},
 	selectedCategoryId: '',
 	selectedProductVariants: {},
-	isCurrentStepValid: false,
+	isCurrentStepValid: true,
 	contactDetails: {
 		firstName: '',
 		lastName: '',
@@ -98,15 +98,23 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			};
 
 		case ActionTypes.NEXT_STEP: {
-			const currentStepIndex = orderedSteps.indexOf(state.currentStep);
+			let nextStepIndex;
+
+			if (state.currentStep) {
+				nextStepIndex = orderedSteps.indexOf(state.currentStep) + 1;
+			} else {
+				nextStepIndex = 0;
+			}
 
 			return {
 				...state,
-				currentStep: orderedSteps[currentStepIndex + 1],
+				currentStep: orderedSteps[nextStepIndex],
 			};
 		}
 
 		case ActionTypes.PREVIOUS_STEP: {
+			if (!state.currentStep) return state;
+
 			const currentStepIndex = orderedSteps.indexOf(state.currentStep);
 
 			return {

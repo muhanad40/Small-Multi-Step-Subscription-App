@@ -1,5 +1,4 @@
 export enum Steps {
-	INITIAL = 'INITIAL',
 	CATEGORY_SELECTION = 'CATEGORY_SELECTION',
 	VARIANT_SELECTION = 'VARIANT_SELECTION',
 	CONTACT_DETAILS_FORM = 'CONTACT_DETAILS_FORM',
@@ -53,7 +52,7 @@ export interface ProductVariant extends BaseObjectRef {
 
 export interface State {
 	userId: string;
-	currentStep: Steps;
+	currentStep: Steps | null;
 	isLoading: boolean;
 	selectedCategoryId: string;
 	contactDetails: {

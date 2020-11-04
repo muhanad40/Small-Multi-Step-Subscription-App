@@ -1,13 +1,12 @@
 import React, { useEffect, useCallback } from 'react';
 
 import Footer from './Footer';
-import InitialStep from './InitialStep';
 import CategorySelection from './CategorySelection';
 import ProductSelection from './ProductSelection';
 import ContactDetailsForm from './ContactDetailsForm';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
-import { useStoreContext, orderedSteps } from '../store';
+import { useStoreContext } from '../store';
 import {
   Steps,
   Category,
@@ -22,7 +21,6 @@ type StepsMapType = {
 }
 
 const stepsMap: StepsMapType = {
-  [Steps.INITIAL]: InitialStep,
   [Steps.CATEGORY_SELECTION]: CategorySelection,
   [Steps.VARIANT_SELECTION]: ProductSelection,
   [Steps.CONTACT_DETAILS_FORM]: ContactDetailsForm,
@@ -40,13 +38,11 @@ function App() {
     currentStep,
     isLoading,
   }, dispatch } = useStoreContext();
-  const StepComponent = stepsMap[currentStep];
-  const isOnFirstStep = currentStep === orderedSteps[0];
-  const isOnLastStep = currentStep === orderedSteps[orderedSteps.length-1];
+  const StepComponent = currentStep && stepsMap[currentStep];
   const fetchData = useCallback(() => {
 		return fetch('https://testapi.numan.com/v1/product_categories')
 			.then(res => res.json());
-	}, []);
+  }, []);
   const generateRandomUserId = useCallback(() => {
     return Math.floor(Math.random() * Date.now());
   }, []);
@@ -120,12 +116,8 @@ function App() {
             )
             : (
               <>
-                <StepComponent />
-                {(!isOnFirstStep && !isOnLastStep)
-                  && (
-                    <Footer />
-                  )
-                }
+                {StepComponent && <StepComponent />}
+                <Footer />
               </>
             )
           }
