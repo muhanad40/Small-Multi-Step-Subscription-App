@@ -55,6 +55,8 @@ const reducer = (state: State, { type, payload }: Action): State => {
 			return {
 				...state,
 				selectedCategoryId: payload,
+				selectedProductId: '',
+				selectedProductVariantId: '',
 			};
 
 		case ActionTypes.SELECT_PRODUCT_VARIANT: {
