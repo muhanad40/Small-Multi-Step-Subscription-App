@@ -1,12 +1,12 @@
 import React, { useEffect, useCallback } from 'react';
 
-import Footer from './Footer';
-import CategorySelection from './CategorySelection';
-import ProductSelection from './ProductSelection';
-import ContactDetailsForm from './ContactDetailsForm';
-import Confirmation from './Confirmation';
-import ThankYou from './ThankYou';
-import { useStoreContext } from '../store';
+import Footer from '../Footer';
+import CategorySelection from '../CategorySelection';
+import ProductSelection from '../ProductSelection';
+import ContactDetailsForm from '../ContactDetailsForm';
+import Confirmation from '../Confirmation';
+import ThankYou from '../ThankYou';
+import { useStoreContext } from '../../store';
 import {
   Steps,
   Category,
@@ -14,7 +14,7 @@ import {
   ProductVariant,
   ActionTypes,
   State,
-} from '../store/types';
+} from '../../store/types';
 
 type StepsMapType = {
   [key in Steps]: () => JSX.Element;
@@ -42,7 +42,7 @@ function App() {
   const fetchData = useCallback(() => {
 		return fetch('https://testapi.numan.com/v1/product_categories')
 			.then(res => res.json());
-  }, []);
+  }, [fetch]);
   const generateRandomUserId = useCallback(() => {
     return Math.floor(Math.random() * Date.now());
   }, []);
@@ -112,7 +112,7 @@ function App() {
         <div className="content">
           {isLoading
             ? (
-              <h1>Loading...</h1>
+              <h1 data-testid="loading-txt">Loading...</h1>
             )
             : (
               <>
