@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useMemo, useEffect } from 'react';
 import { useStoreContext } from '../store';
 
-import { ActionTypes, Product, ProductVariant, State } from '../store/types';
+import { ActionTypes, Product, ProductVariant } from '../store/types';
 import ProductCard from './ProductCard';
 
 const ProductSelection = () => {
@@ -43,7 +43,10 @@ const ProductSelection = () => {
 				variantId: defaultVariantId,
 			},
 		});
-	}, [sortedProducts, dispatch, state.selectedProductVariantId]);
+	}, [
+		sortedProducts, dispatch, state.selectedProductVariantId,
+		selectedCategory.relationships.default_product.data.id, state.products
+	]);
 
 	useEffect(() => {
 		dispatch({
