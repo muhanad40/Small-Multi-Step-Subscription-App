@@ -10,7 +10,7 @@ describe('ContactDetailsForm component', () => {
 		const lastName = 'Doe';
 		const phoneNumber = '09384729432';
 		const emailAddress = 'john.doe@email.com';
-		const { getByTestId, debug } = render(
+		const { getByTestId } = render(
 			<MockStoreProvider>
 				<ContactDetailsForm />
 			</MockStoreProvider>

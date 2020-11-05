@@ -46,7 +46,7 @@ describe('ProductSelection component', () => {
 			...mockState,
 			selectedCategoryId: selectedCatId,
 		};
-		const { getAllByTestId, debug } = render(
+		const { getAllByTestId } = render(
 			<MockStoreProvider initState={mockedState}>
 				<ProductSelection />
 			</MockStoreProvider>
@@ -80,7 +80,7 @@ describe('ProductSelection component', () => {
 			...mockState,
 			selectedCategoryId: selectedCatId,
 		};
-		const { getAllByTestId, debug, container } = render(
+		const { getAllByTestId, container } = render(
 			<MockStoreProvider initState={mockedState}>
 				<ProductSelection />
 			</MockStoreProvider>
