@@ -14,6 +14,7 @@ import {
 	ActionTypes,
 	Steps,
 	StoreContextType,
+	Category,
 } from './types';
 
 export const orderedSteps = [
@@ -44,12 +45,12 @@ const initState: State = {
 	},
 };
 
-const StoreContext = createContext<StoreContextType>({
+export const StoreContext = createContext<StoreContextType>({
 	state: initState,
 	dispatch: () => null,
 });
 
-const reducer = (state: State, { type, payload }: Action): State => {
+export const reducer = (state: State, { type, payload }: Action): State => {
 	switch(type) {
 		case ActionTypes.SELECT_CATEGORY:
 			const defaultProductId = state.categories[payload as Category['id']].relationships.default_product.data.id;
@@ -150,10 +151,14 @@ const reducer = (state: State, { type, payload }: Action): State => {
 	}
 };
 
-export function StoreProvider(props: object): ReactElement {
+export function StoreProvider({ children }: { children: React.ReactNode }): ReactElement {
 	const [state, dispatch] = useReducer(reducer, initState);
 
-	return <StoreContext.Provider value={{state, dispatch}} {...props} />;
+	return (
+		<StoreContext.Provider value={{state, dispatch}}>
+			{children}
+		</StoreContext.Provider>
+	);
 }
 
 export function useStoreContext() {

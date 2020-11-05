@@ -1,9 +1,11 @@
 import React from 'react';
 import mockData from '../../mockData.json';
-import { render, waitForElementToBeRemoved, fireEvent, act } from '@testing-library/react';
+import { render, waitForElementToBeRemoved } from '@testing-library/react';
 
 import App from './';
 import { StoreProvider } from '../../store';
+
+import { click } from '../../testUtils';
 
 function renderApp() {
 	fetchMock.mockResponseOnce(JSON.stringify(mockData));
@@ -13,14 +15,6 @@ function renderApp() {
 			<App />
 		</StoreProvider>
 	);
-}
-
-async function click(element: HTMLElement) {
-	fireEvent.click(element);
-	// Fix for act() warning ¯\_(ツ)_/¯
-	await act(() => {
-		return Promise.resolve();
-	});
 }
 
 describe('App component', () => {
