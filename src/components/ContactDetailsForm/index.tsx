@@ -1,7 +1,7 @@
 import React, { useCallback, ChangeEvent, useEffect } from 'react';
 
-import { useStoreContext } from '../store';
-import { ActionTypes } from '../store/types';
+import { useStoreContext } from '../../store';
+import { ActionTypes } from '../../store/types';
 
 
 const ContactDetailsForm = () => {
@@ -40,6 +40,7 @@ const ContactDetailsForm = () => {
 								className="form__field-input"
 								value={state.contactDetails.firstName}
 								onChange={onChange}
+								data-testid="first-name-input"
 							/>
 						</label>
 					</div>
@@ -53,6 +54,7 @@ const ContactDetailsForm = () => {
 								className="form__field-input"
 								value={state.contactDetails.lastName}
 								onChange={onChange}
+								data-testid="last-name-input"
 							/>
 						</label>
 					</div>
@@ -66,6 +68,7 @@ const ContactDetailsForm = () => {
 								className="form__field-input"
 								value={state.contactDetails.phoneNumber}
 								onChange={onChange}
+								data-testid="phone-number-input"
 							/>
 						</label>
 					</div>
@@ -79,6 +82,7 @@ const ContactDetailsForm = () => {
 								className="form__field-input"
 								value={state.contactDetails.email}
 								onChange={onChange}
+								data-testid="email-address-input"
 							/>
 						</label>
 					</div>
