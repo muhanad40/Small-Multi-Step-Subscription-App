@@ -19,10 +19,13 @@ const RadioInput = ({ id, price, selected, onChange, frequency, label }: Props):
 			value={id}
 			checked={selected}
 			onChange={onChange}
+			data-testid="radio-input"
 		/>
 		<div className="radio-input__control"></div>
-		<div className="radio-input__label">
-			{label} - <span className="radio-input__price">£{(price/100).toFixed(2)}</span>
+		<div>
+			<div className="radio-input__label" data-testid="radio-input-label">
+				{label} - <span className="radio-input__price">£{(price/100).toFixed(2)}</span>
+			</div>
 			<div className="radio-input__sub-label">{parseFrequency(frequency)}</div>
 		</div>
 	</label>

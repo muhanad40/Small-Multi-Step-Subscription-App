@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, ChangeEvent } from 'react';
 
 import RadioInput from './RadioInput';
 import { useStoreContext } from '../store';
-import { Product, ActionTypes } from '../store/types';
+import { Product, ActionTypes, ProductVariant } from '../store/types';
 
 const ProductCard = (props: Product) => {
 	const { dispatch } = useStoreContext();
@@ -27,6 +27,11 @@ const ProductCard = (props: Product) => {
 			},
 		});
 	}, [dispatch]);
+	const onRadioChange = useCallback((e: ChangeEvent<HTMLInputElement>, productId: Product['id'], variantId: ProductVariant['id']) => {
+		if (e.target.checked) {
+			selectProduct(productId, variantId);
+		}
+	}, [selectProduct]);
 	const { state } = useStoreContext();
 
 	return (
@@ -34,7 +39,9 @@ const ProductCard = (props: Product) => {
 			<div className="products__card-header">
 				<div className="products__header-img"></div>
 
-				<span className="products__header-title">{name} {alt_name && `(${alt_name})`}</span>
+				<span className="products__header-title" data-testid="product-title">
+					{name} {alt_name && `(${alt_name})`}
+				</span>
 			</div>
 
 			<div className="products__description">
@@ -59,11 +66,7 @@ const ProductCard = (props: Product) => {
 						price={price}
 						selected={state.selectedProductVariantId === variantId}
 						frequency={subscription_frequency}
-						onChange={(e) => {
-							if (e.target.checked) {
-								selectProduct(productId, variantId);
-							}
-						}}
+						onChange={(e) => onRadioChange(e, productId, variantId)}
 					/>
 				);
 			})}

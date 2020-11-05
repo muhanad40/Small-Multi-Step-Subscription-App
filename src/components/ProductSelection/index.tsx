@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useMemo, useEffect } from 'react';
-import { useStoreContext } from '../store';
+import { useStoreContext } from '../../store';
 
-import { ActionTypes, Product, ProductVariant } from '../store/types';
-import ProductCard from './ProductCard';
+import { ActionTypes, Product, ProductVariant } from '../../store/types';
+import ProductCard from '../ProductCard';
 
 const ProductSelection = () => {
 	const { state, dispatch } = useStoreContext();
@@ -16,7 +16,7 @@ const ProductSelection = () => {
 			} else {
 				return 1
 			}
-		})
+		});
 	}, []);
 	const sortByPriceDesc = useCallback((products: ProductVariant[]) => {
 		return products.sort(({ attributes: { price: priceA }}, { attributes: { price: priceB }}) => {
@@ -37,7 +37,7 @@ const ProductSelection = () => {
 	}, [state.selectedProductVariantId, dispatch]);
 
 	useMemo(() => {
-		const sorted = categoryProducts
+		const productsWithSortedVariants = categoryProducts
 			.map(({ id }) => {
 				const result = state.products[id];
 				const variants = state.products[id].relationships.product_variants.data.map((productVariant) => {
@@ -53,7 +53,7 @@ const ProductSelection = () => {
 				return result;
 			});
 
-		setSortedProducts(sortByTitleAsc(sorted));
+		setSortedProducts(sortByTitleAsc(productsWithSortedVariants));
 	}, [state.products, categoryProducts, sortByPriceDesc, sortByTitleAsc, state.productVariants]);
 
 	return (

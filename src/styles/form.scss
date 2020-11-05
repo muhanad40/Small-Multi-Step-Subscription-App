@@ -42,11 +42,12 @@
     border: .125rem solid currentColor;
   }
 
-  &__label {
+  &__label,
+  &__sub-label {
     margin-left: .625rem;
   }
 
-  &__label &__sub-label {
+  &__sub-label {
     font-size: .8125rem;
     color: darken($grey, 40);
     margin-top: .1875rem;
