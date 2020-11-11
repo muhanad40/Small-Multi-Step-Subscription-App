@@ -1,8 +1,5 @@
 ### What is this?
-This is an SPA built using TypeScript/React for Numan. This project uses Jest for testing.
-
-### Trello board
-I used Trello to manage this project. You can [see it here](https://trello.com/b/SxiX0rr3/numan-test);
+This is a tech test submission for a job application. It's a SPA built using TypeScript/React. This project uses Jest for testing.
 
 ### Requirements:
 - Node version >= v10.14.2
