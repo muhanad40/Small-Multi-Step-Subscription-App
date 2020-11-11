@@ -24,10 +24,7 @@ describe('App component', () => {
 	});
 
 	it('should switch between different steps (via Footer) correctly and POST event', async () => {
-		const { getByTestId, getByText } = renderApp();
-
-		await waitForElementToBeRemoved(() => getByTestId('loading-txt'));
-
+		const { getByText } = renderApp();
 		const nextBtn = getByText('Get Started');
 
 		await click(nextBtn);
@@ -38,10 +35,7 @@ describe('App component', () => {
 	});
 
 	it('should go back a step when Back button is clicked', async () => {
-		const { getByTestId, getByText } = renderApp();
-
-		await waitForElementToBeRemoved(() => getByTestId('loading-txt'));
-
+		const { getByText } = renderApp();
 		const nextBtn = getByText('Get Started');
 
 		await click(nextBtn);
