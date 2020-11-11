@@ -35,8 +35,6 @@ describe('App component', () => {
 		expect(() => {
 			getByText('What do you need help with?');
 		}).not.toThrow();
-
-		expect(fetchMock.mock.calls[1][0]).toEqual('https://testapi.numan.com/v1/events')
 	});
 
 	it('should go back a step when Back button is clicked', async () => {
