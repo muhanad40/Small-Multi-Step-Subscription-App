@@ -8,6 +8,9 @@ import
 	}
 from "react";
 
+import categories from '../mock-data/categories.json'
+import products from '../mock-data/products.json'
+import productVariants from '../mock-data/product-variants.json'
 import {
 	State,
 	Action,
@@ -30,9 +33,9 @@ const initState: State = {
 	userId: '',
 	currentStep: null,
 	isLoading: true,
-	categories: {},
-	products: {},
-	productVariants: {},
+	categories,
+	products,
+	productVariants,
 	selectedCategoryId: '',
 	selectedProductId: '',
 	selectedProductVariantId: '',
@@ -90,12 +93,6 @@ export const reducer = (state: State, { type, payload }: Action): State => {
 				isCurrentStepValid: payload,
 			};
 
-		case ActionTypes.SET_LOADING_STATUS:
-			return {
-				...state,
-				isLoading: payload as boolean,
-			};
-
 		case ActionTypes.NEXT_STEP: {
 			let nextStepIndex;
 
@@ -121,30 +118,6 @@ export const reducer = (state: State, { type, payload }: Action): State => {
 				currentStep: orderedSteps[currentStepIndex - 1],
 			};
 		}
-
-		case ActionTypes.STORE_CATEGORIES:
-			return {
-				...state,
-				categories: payload,
-			}
-
-		case ActionTypes.STORE_PRODUCTS:
-			return {
-				...state,
-				products: payload,
-			}
-
-		case ActionTypes.STORE_PRODUCTS_VARIANTS:
-			return {
-				...state,
-				productVariants: payload,
-			}
-
-		case ActionTypes.STORE_USER_ID:
-			return {
-				...state,
-				userId: payload,
-			}
 
 		default:
 			return state;

@@ -12,22 +12,24 @@ interface BaseObjectRef {
 }
 
 export interface Category extends BaseObjectRef {
-	type: 'product_category';
 	attributes: {
 		name: string;
+		slug: string,
+		default_product_id: string,
+		active: boolean,
+		position: number,
 	};
 	relationships: {
 		default_product: {
 			data: BaseObjectRef;
 		};
 		products: {
-			data: Product[];
+			data: BaseObjectRef[];
 		};
 	};
 }
 
 export interface Product extends BaseObjectRef {
-	type: 'product';
 	attributes: {
 		name: string;
 		alt_name: string;
@@ -38,14 +40,12 @@ export interface Product extends BaseObjectRef {
 			data: BaseObjectRef,
 		},
 		product_variants: {
-			data: ProductVariant[];
+			data: BaseObjectRef[];
 		};
 	};
 }
 
 export interface ProductVariant extends BaseObjectRef {
-	type: 'product_variant';
-	price: number;
 	attributes: {
 		price: number;
 		variant: string;
@@ -79,15 +79,9 @@ export interface State {
 }
 
 export enum ActionTypes {
-	STORE_USER_ID,
 	NEXT_STEP,
 	PREVIOUS_STEP,
-	SET_LOADING_STATUS,
-	STORE_CATEGORIES,
-	STORE_PRODUCTS,
-	STORE_PRODUCTS_VARIANTS,
 	SELECT_CATEGORY,
-	PRESELECT_PRODUCT_VARIANTS,
 	SELECT_PRODUCT_VARIANT,
 	STORE_CONTACT_DETAILS,
 	SET_STEP_VALIDITY,

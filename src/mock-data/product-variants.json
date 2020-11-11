@@ -1,0 +1,1539 @@
+{
+  "bd07e338-8bb9-4afa-b2dc-a44723fa716d": {
+    "id": "bd07e338-8bb9-4afa-b2dc-a44723fa716d",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "50mg 4 tablets",
+      "price": 1800,
+      "quantity": 4,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 4,
+      "dosage": "50mg",
+      "dosage_quantity": 50,
+      "dosage_unit": "mg",
+      "unit_price": 450
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "111348ef-d012-41fd-aa27-3f6941366562": {
+    "id": "111348ef-d012-41fd-aa27-3f6941366562",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "50mg 8 tablets",
+      "price": 3300,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 2,
+      "average_monthly_quantity": 4,
+      "dosage": "50mg",
+      "dosage_quantity": 50,
+      "dosage_unit": "mg",
+      "unit_price": 412
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "eac51aeb-7fcc-41b3-b21f-28333407ba43": {
+    "id": "eac51aeb-7fcc-41b3-b21f-28333407ba43",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "50mg 4 tablets",
+      "price": 1800,
+      "quantity": 4,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 24,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 3,
+      "average_monthly_quantity": 8,
+      "dosage": "50mg",
+      "dosage_quantity": 50,
+      "dosage_unit": "mg",
+      "unit_price": 450
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "cbe68530-8258-4575-ad19-bf1e7728c299": {
+    "id": "cbe68530-8258-4575-ad19-bf1e7728c299",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "50mg 8 tablets",
+      "price": 2300,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 4,
+      "average_monthly_quantity": 8,
+      "dosage": "50mg",
+      "dosage_quantity": 50,
+      "dosage_unit": "mg",
+      "unit_price": 287
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "e87b9a4b-cc1f-4815-9816-a3a971e657ba": {
+    "id": "e87b9a4b-cc1f-4815-9816-a3a971e657ba",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "50mg 16 tablets",
+      "price": 4200,
+      "quantity": 16,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 5,
+      "average_monthly_quantity": 8,
+      "dosage": "50mg",
+      "dosage_quantity": 50,
+      "dosage_unit": "mg",
+      "unit_price": 262
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "8450904a-d1ad-41a7-9dc4-e947edf67716": {
+    "id": "8450904a-d1ad-41a7-9dc4-e947edf67716",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "50mg 8 tablets",
+      "price": 3000,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 24,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 6,
+      "average_monthly_quantity": 16,
+      "dosage": "50mg",
+      "dosage_quantity": 50,
+      "dosage_unit": "mg",
+      "unit_price": 375
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "a4867764-5584-4e34-951c-1300f7540185": {
+    "id": "a4867764-5584-4e34-951c-1300f7540185",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "50mg 16 tablets",
+      "price": 4000,
+      "quantity": 16,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 7,
+      "average_monthly_quantity": 16,
+      "dosage": "50mg",
+      "dosage_quantity": 50,
+      "dosage_unit": "mg",
+      "unit_price": 250
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "6cb9454c-f932-4fc6-917f-003c8fc32d40": {
+    "id": "6cb9454c-f932-4fc6-917f-003c8fc32d40",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "50mg 32 tablets",
+      "price": 7200,
+      "quantity": 32,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 8,
+      "average_monthly_quantity": 16,
+      "dosage": "50mg",
+      "dosage_quantity": 50,
+      "dosage_unit": "mg",
+      "unit_price": 225
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "8b8b9d89-4f28-4c24-89b6-ce08349bab33": {
+    "id": "8b8b9d89-4f28-4c24-89b6-ce08349bab33",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "100mg 4 tablets",
+      "price": 2500,
+      "quantity": 4,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 9,
+      "average_monthly_quantity": 4,
+      "dosage": "100mg",
+      "dosage_quantity": 100,
+      "dosage_unit": "mg",
+      "unit_price": 625
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "0f536db9-3400-4ade-a63a-a422a65c0c2f": {
+    "id": "0f536db9-3400-4ade-a63a-a422a65c0c2f",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "100mg 8 tablets",
+      "price": 4600,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 10,
+      "average_monthly_quantity": 4,
+      "dosage": "100mg",
+      "dosage_quantity": 100,
+      "dosage_unit": "mg",
+      "unit_price": 575
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "6a995cbd-9057-4a42-92c9-7f69bf627b51": {
+    "id": "6a995cbd-9057-4a42-92c9-7f69bf627b51",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "100mg 4 tablets",
+      "price": 2500,
+      "quantity": 4,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 24,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 11,
+      "average_monthly_quantity": 8,
+      "dosage": "100mg",
+      "dosage_quantity": 100,
+      "dosage_unit": "mg",
+      "unit_price": 625
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "ca42c3c6-7bee-4ef3-a729-84f0832deb05": {
+    "id": "ca42c3c6-7bee-4ef3-a729-84f0832deb05",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "100mg 8 tablets",
+      "price": 3200,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 12,
+      "average_monthly_quantity": 8,
+      "dosage": "100mg",
+      "dosage_quantity": 100,
+      "dosage_unit": "mg",
+      "unit_price": 400
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "9ba8fd16-0ecb-4370-b67e-63d61b67e8b9": {
+    "id": "9ba8fd16-0ecb-4370-b67e-63d61b67e8b9",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "100mg 16 tablets",
+      "price": 5800,
+      "quantity": 16,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 13,
+      "average_monthly_quantity": 8,
+      "dosage": "100mg",
+      "dosage_quantity": 100,
+      "dosage_unit": "mg",
+      "unit_price": 362
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "619dc240-242d-4c8f-be8c-43273940b74a": {
+    "id": "619dc240-242d-4c8f-be8c-43273940b74a",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "100mg 8 tablets",
+      "price": 4200,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 24,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 14,
+      "average_monthly_quantity": 16,
+      "dosage": "100mg",
+      "dosage_quantity": 100,
+      "dosage_unit": "mg",
+      "unit_price": 525
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "17d405d6-5d4f-479c-b6ca-b54f28736ab9": {
+    "id": "17d405d6-5d4f-479c-b6ca-b54f28736ab9",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "100mg 16 tablets",
+      "price": 5600,
+      "quantity": 16,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 15,
+      "average_monthly_quantity": 16,
+      "dosage": "100mg",
+      "dosage_quantity": 100,
+      "dosage_unit": "mg",
+      "unit_price": 350
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "fbae4187-0e29-46cc-8566-012af61a6195": {
+    "id": "fbae4187-0e29-46cc-8566-012af61a6195",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "100mg 32 tablets",
+      "price": 10000,
+      "quantity": 32,
+      "unit": "tablet",
+      "product_id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 16,
+      "average_monthly_quantity": 16,
+      "dosage": "100mg",
+      "dosage_quantity": 100,
+      "dosage_unit": "mg",
+      "unit_price": 312
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "3650fb30-e70b-444a-9c16-cdff83dd24b1",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "4d3f8a09-86d9-411d-b4f8-ffa89b2fa57e": {
+    "id": "4d3f8a09-86d9-411d-b4f8-ffa89b2fa57e",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "2.5mg 28 tablets",
+      "price": 4000,
+      "quantity": 28,
+      "unit": "tablet",
+      "product_id": "15a70918-c650-4a45-b701-ba0eff3b0c88",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 28,
+      "dosage": "2.5mg",
+      "dosage_quantity": 2.5,
+      "dosage_unit": "mg",
+      "unit_price": 142
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "15a70918-c650-4a45-b701-ba0eff3b0c88",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "8aaa20ff-c3c9-442b-82ea-046ac1e2981d": {
+    "id": "8aaa20ff-c3c9-442b-82ea-046ac1e2981d",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "5mg 28 tablets",
+      "price": 5600,
+      "quantity": 28,
+      "unit": "tablet",
+      "product_id": "15a70918-c650-4a45-b701-ba0eff3b0c88",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 3,
+      "average_monthly_quantity": 28,
+      "dosage": "5mg",
+      "dosage_quantity": 5,
+      "dosage_unit": "mg",
+      "unit_price": 200
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "15a70918-c650-4a45-b701-ba0eff3b0c88",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "3fb7541a-7d86-42c5-be38-f46559f360cb": {
+    "id": "3fb7541a-7d86-42c5-be38-f46559f360cb",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "5mg 56 tablets",
+      "price": 10000,
+      "quantity": 56,
+      "unit": "tablet",
+      "product_id": "15a70918-c650-4a45-b701-ba0eff3b0c88",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 4,
+      "average_monthly_quantity": 28,
+      "dosage": "5mg",
+      "dosage_quantity": 5,
+      "dosage_unit": "mg",
+      "unit_price": 178
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "15a70918-c650-4a45-b701-ba0eff3b0c88",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "039e52b9-46bd-458a-9783-c12b5c019c5f": {
+    "id": "039e52b9-46bd-458a-9783-c12b5c019c5f",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "10mg 4 tablets",
+      "price": 2500,
+      "quantity": 4,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 4,
+      "dosage": "10mg",
+      "dosage_quantity": 10,
+      "dosage_unit": "mg",
+      "unit_price": 625
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "9197c2cc-e81e-4245-bc30-04e692b93681": {
+    "id": "9197c2cc-e81e-4245-bc30-04e692b93681",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "10mg 8 tablets",
+      "price": 4500,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 2,
+      "average_monthly_quantity": 4,
+      "dosage": "10mg",
+      "dosage_quantity": 10,
+      "dosage_unit": "mg",
+      "unit_price": 562
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "83c9eb4a-7e3d-4d6d-9ef8-198521e75d07": {
+    "id": "83c9eb4a-7e3d-4d6d-9ef8-198521e75d07",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "10mg 4 tablets",
+      "price": 2500,
+      "quantity": 4,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 24,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 3,
+      "average_monthly_quantity": 8,
+      "dosage": "10mg",
+      "dosage_quantity": 10,
+      "dosage_unit": "mg",
+      "unit_price": 625
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "1f38cf6f-7c76-4fb0-8399-b464d63debe9": {
+    "id": "1f38cf6f-7c76-4fb0-8399-b464d63debe9",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "10mg 8 tablets",
+      "price": 3200,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 4,
+      "average_monthly_quantity": 8,
+      "dosage": "10mg",
+      "dosage_quantity": 10,
+      "dosage_unit": "mg",
+      "unit_price": 400
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "1404329a-9fc6-43fa-b4e0-8ab63b73b467": {
+    "id": "1404329a-9fc6-43fa-b4e0-8ab63b73b467",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "10mg 16 tablets",
+      "price": 5800,
+      "quantity": 16,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 5,
+      "average_monthly_quantity": 8,
+      "dosage": "10mg",
+      "dosage_quantity": 10,
+      "dosage_unit": "mg",
+      "unit_price": 362
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "73e3d26c-31db-4b17-8396-a58578544c7f": {
+    "id": "73e3d26c-31db-4b17-8396-a58578544c7f",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "10mg 8 tablets",
+      "price": 3800,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 24,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 6,
+      "average_monthly_quantity": 16,
+      "dosage": "10mg",
+      "dosage_quantity": 10,
+      "dosage_unit": "mg",
+      "unit_price": 475
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "caf45b3b-88b1-465e-9245-7a56b2d2f4c9": {
+    "id": "caf45b3b-88b1-465e-9245-7a56b2d2f4c9",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "10mg 16 tablets",
+      "price": 5000,
+      "quantity": 16,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 7,
+      "average_monthly_quantity": 16,
+      "dosage": "10mg",
+      "dosage_quantity": 10,
+      "dosage_unit": "mg",
+      "unit_price": 312
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "9b8b4743-d966-4375-9363-bece658b0239": {
+    "id": "9b8b4743-d966-4375-9363-bece658b0239",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "10mg 32 tablets",
+      "price": 9000,
+      "quantity": 32,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 8,
+      "average_monthly_quantity": 16,
+      "dosage": "10mg",
+      "dosage_quantity": 10,
+      "dosage_unit": "mg",
+      "unit_price": 281
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "3c18a803-b8a3-4097-b391-a48954e65ea4": {
+    "id": "3c18a803-b8a3-4097-b391-a48954e65ea4",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "20mg 4 tablets",
+      "price": 3500,
+      "quantity": 4,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 9,
+      "average_monthly_quantity": 4,
+      "dosage": "20mg",
+      "dosage_quantity": 20,
+      "dosage_unit": "mg",
+      "unit_price": 875
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "def946ef-aabc-4d9d-a4a1-4f2bd74b1b4e": {
+    "id": "def946ef-aabc-4d9d-a4a1-4f2bd74b1b4e",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "20mg 8 tablets",
+      "price": 6300,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 10,
+      "average_monthly_quantity": 4,
+      "dosage": "20mg",
+      "dosage_quantity": 20,
+      "dosage_unit": "mg",
+      "unit_price": 787
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "e9dd3ca1-e27e-4c75-9335-17ac9d1ea2e2": {
+    "id": "e9dd3ca1-e27e-4c75-9335-17ac9d1ea2e2",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "20mg 4 tablets",
+      "price": 3500,
+      "quantity": 4,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 24,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 11,
+      "average_monthly_quantity": 8,
+      "dosage": "20mg",
+      "dosage_quantity": 20,
+      "dosage_unit": "mg",
+      "unit_price": 875
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "21e6642c-0026-4d86-a5ec-149eff13b3b2": {
+    "id": "21e6642c-0026-4d86-a5ec-149eff13b3b2",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "20mg 8 tablets",
+      "price": 4400,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 12,
+      "average_monthly_quantity": 8,
+      "dosage": "20mg",
+      "dosage_quantity": 20,
+      "dosage_unit": "mg",
+      "unit_price": 550
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "448e7d18-526a-4097-823c-4a6cd6a4efa1": {
+    "id": "448e7d18-526a-4097-823c-4a6cd6a4efa1",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "20mg 16 tablets",
+      "price": 8100,
+      "quantity": 16,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 13,
+      "average_monthly_quantity": 8,
+      "dosage": "20mg",
+      "dosage_quantity": 20,
+      "dosage_unit": "mg",
+      "unit_price": 506
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "e22c1234-6c7a-46f2-a96b-3b948bc1b7b3": {
+    "id": "e22c1234-6c7a-46f2-a96b-3b948bc1b7b3",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "20mg 8 tablets",
+      "price": 5300,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 24,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 14,
+      "average_monthly_quantity": 16,
+      "dosage": "20mg",
+      "dosage_quantity": 20,
+      "dosage_unit": "mg",
+      "unit_price": 662
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "5372bd85-35f5-4c9e-9d81-338559a51c51": {
+    "id": "5372bd85-35f5-4c9e-9d81-338559a51c51",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "20mg 16 tablets",
+      "price": 7000,
+      "quantity": 16,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 15,
+      "average_monthly_quantity": 16,
+      "dosage": "20mg",
+      "dosage_quantity": 20,
+      "dosage_unit": "mg",
+      "unit_price": 437
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "766ecdb5-6d71-497c-a7c8-510419985a3b": {
+    "id": "766ecdb5-6d71-497c-a7c8-510419985a3b",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "20mg 32 tablets",
+      "price": 12600,
+      "quantity": 32,
+      "unit": "tablet",
+      "product_id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 16,
+      "average_monthly_quantity": 16,
+      "dosage": "20mg",
+      "dosage_quantity": 20,
+      "dosage_unit": "mg",
+      "unit_price": 393
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1c4c4ba7-6206-4835-832a-aeb4797b4fdb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "90323901-60c9-4fbd-9243-8c493ebf2f27": {
+    "id": "90323901-60c9-4fbd-9243-8c493ebf2f27",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "50mg 8 tablets",
+      "price": 4500,
+      "quantity": 8,
+      "unit": "tablet",
+      "product_id": "cc1a3907-9875-4b8c-9b7b-40a3b34748be",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 8,
+      "dosage": "50mg",
+      "dosage_quantity": 50,
+      "dosage_unit": "mg",
+      "unit_price": 562
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "cc1a3907-9875-4b8c-9b7b-40a3b34748be",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "1367e51e-9c22-4fab-b8d8-af2d86b6ec05": {
+    "id": "1367e51e-9c22-4fab-b8d8-af2d86b6ec05",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "1mg 28 tablets",
+      "price": 2800,
+      "quantity": 28,
+      "unit": "tablet",
+      "product_id": "4dfaa6fc-f294-43ba-a012-fe6640d3938b",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 28,
+      "dosage": "1mg",
+      "dosage_quantity": 1,
+      "dosage_unit": "mg",
+      "unit_price": 100
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "4dfaa6fc-f294-43ba-a012-fe6640d3938b",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "e4e69c95-06dd-475c-a04b-b975ae6947af": {
+    "id": "e4e69c95-06dd-475c-a04b-b975ae6947af",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "1mg 56 tablets",
+      "price": 5000,
+      "quantity": 56,
+      "unit": "tablet",
+      "product_id": "4dfaa6fc-f294-43ba-a012-fe6640d3938b",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 2,
+      "average_monthly_quantity": 28,
+      "dosage": "1mg",
+      "dosage_quantity": 1,
+      "dosage_unit": "mg",
+      "unit_price": 89
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "4dfaa6fc-f294-43ba-a012-fe6640d3938b",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "ac89f363-3621-4581-9121-4dd673f41be2": {
+    "id": "ac89f363-3621-4581-9121-4dd673f41be2",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "6% solution (60ml)",
+      "price": 2500,
+      "quantity": 1,
+      "unit": "bottle",
+      "product_id": "7aa6050e-2acd-4b04-b4fe-3133e33ac0f7",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 1,
+      "dosage": "6%",
+      "dosage_quantity": 6,
+      "dosage_unit": "%",
+      "unit_price": 2500
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "7aa6050e-2acd-4b04-b4fe-3133e33ac0f7",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "6ad76d2a-23de-441c-bbf5-8dee40b0dc9b": {
+    "id": "6ad76d2a-23de-441c-bbf5-8dee40b0dc9b",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "5% (60ml)",
+      "price": 4200,
+      "quantity": 1,
+      "unit": "bottle",
+      "product_id": "0192b157-db20-482a-b5b2-fcd3377af9bb",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 1,
+      "dosage": "5%",
+      "dosage_quantity": 5,
+      "dosage_unit": "%",
+      "unit_price": 4200
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "0192b157-db20-482a-b5b2-fcd3377af9bb",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "b00f467b-874a-4ebd-beb6-390fb29886bd": {
+    "id": "b00f467b-874a-4ebd-beb6-390fb29886bd",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "30mg 3 tablets",
+      "price": 2500,
+      "quantity": 3,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 3,
+      "dosage": "30mg",
+      "dosage_quantity": 30,
+      "dosage_unit": "mg",
+      "unit_price": 833
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "aca79158-ef26-4d7a-8d33-206f01fbd406": {
+    "id": "aca79158-ef26-4d7a-8d33-206f01fbd406",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "30mg 6 tablets",
+      "price": 4500,
+      "quantity": 6,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 3,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 2,
+      "average_monthly_quantity": 3,
+      "dosage": "30mg",
+      "dosage_quantity": 30,
+      "dosage_unit": "mg",
+      "unit_price": 750
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "c968ad39-3848-4f69-899f-0a936972de59": {
+    "id": "c968ad39-3848-4f69-899f-0a936972de59",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "30mg 3 tablets",
+      "price": 3400,
+      "quantity": 3,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 3,
+      "average_monthly_quantity": 6,
+      "dosage": "30mg",
+      "dosage_quantity": 30,
+      "dosage_unit": "mg",
+      "unit_price": 1133
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "ebff461f-0004-4cec-acdd-293f67282d7d": {
+    "id": "ebff461f-0004-4cec-acdd-293f67282d7d",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "30mg 6 tablets",
+      "price": 4500,
+      "quantity": 6,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 4,
+      "average_monthly_quantity": 6,
+      "dosage": "30mg",
+      "dosage_quantity": 30,
+      "dosage_unit": "mg",
+      "unit_price": 750
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "02df2396-101b-4a07-a362-42ae4b99da6b": {
+    "id": "02df2396-101b-4a07-a362-42ae4b99da6b",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "30mg 12 tablets",
+      "price": 8000,
+      "quantity": 12,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 3,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 5,
+      "average_monthly_quantity": 6,
+      "dosage": "30mg",
+      "dosage_quantity": 30,
+      "dosage_unit": "mg",
+      "unit_price": 666
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "694b8132-4674-49a8-bc05-f543f8c2b23f": {
+    "id": "694b8132-4674-49a8-bc05-f543f8c2b23f",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "60mg 3 tablets",
+      "price": 3500,
+      "quantity": 3,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 6,
+      "average_monthly_quantity": 3,
+      "dosage": "60mg",
+      "dosage_quantity": 60,
+      "dosage_unit": "mg",
+      "unit_price": 1166
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "a2db47cf-90c5-4ded-ac05-91e393f58e23": {
+    "id": "a2db47cf-90c5-4ded-ac05-91e393f58e23",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "60mg 6 tablets",
+      "price": 6300,
+      "quantity": 6,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 3,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 7,
+      "average_monthly_quantity": 3,
+      "dosage": "60mg",
+      "dosage_quantity": 60,
+      "dosage_unit": "mg",
+      "unit_price": 1050
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "3a0de233-d0a5-48cc-85de-b0a3533726d9": {
+    "id": "3a0de233-d0a5-48cc-85de-b0a3533726d9",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "60mg 3 tablets",
+      "price": 4700,
+      "quantity": 3,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "14d",
+      "active": true,
+      "position": 8,
+      "average_monthly_quantity": 6,
+      "dosage": "60mg",
+      "dosage_quantity": 60,
+      "dosage_unit": "mg",
+      "unit_price": 1566
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "ad80599b-361f-4a37-ac3f-0b4cc0cce5dc": {
+    "id": "ad80599b-361f-4a37-ac3f-0b4cc0cce5dc",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "60mg 6 tablets",
+      "price": 6300,
+      "quantity": 6,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 6,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 9,
+      "average_monthly_quantity": 6,
+      "dosage": "60mg",
+      "dosage_quantity": 60,
+      "dosage_unit": "mg",
+      "unit_price": 1050
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "406f8c6f-08c7-4722-8418-0c08e35f6498": {
+    "id": "406f8c6f-08c7-4722-8418-0c08e35f6498",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "60mg 12 tablets",
+      "price": 11200,
+      "quantity": 12,
+      "unit": "tablet",
+      "product_id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 3,
+      "subscription_frequency": "2m",
+      "active": true,
+      "position": 10,
+      "average_monthly_quantity": 6,
+      "dosage": "60mg",
+      "dosage_quantity": 60,
+      "dosage_unit": "mg",
+      "unit_price": 933
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "83c2ec71-bbed-43e2-b340-15001f1ded6f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "1fc4816d-76b4-4c2e-aa19-65c8af163f4e": {
+    "id": "1fc4816d-76b4-4c2e-aa19-65c8af163f4e",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "6 wipes",
+      "price": 1500,
+      "quantity": 6,
+      "unit": "wipe",
+      "product_id": "cda17def-2265-4353-888f-f64b1cee2d1f",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 6,
+      "dosage": "",
+      "dosage_quantity": null,
+      "dosage_unit": null,
+      "unit_price": 250
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "cda17def-2265-4353-888f-f64b1cee2d1f",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "492c2cc1-cc9d-40cf-88d3-98d1cb098b38": {
+    "id": "492c2cc1-cc9d-40cf-88d3-98d1cb098b38",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "Testosterone, Cholesterol & Diabetes",
+      "price": 5500,
+      "quantity": 1,
+      "unit": "kit",
+      "product_id": "4909e06e-a1ec-4b8f-8465-333b600f3cd7",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 1,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": null,
+      "dosage": "",
+      "dosage_quantity": null,
+      "dosage_unit": null,
+      "unit_price": 5500
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "4909e06e-a1ec-4b8f-8465-333b600f3cd7",
+          "type": "product"
+        }
+      }
+    }
+  },
+  "a0590234-89c5-44b2-b839-c1a50c75639d": {
+    "id": "a0590234-89c5-44b2-b839-c1a50c75639d",
+    "type": "product_variant",
+    "attributes": {
+      "variant": "1 month supply (60 capsules)",
+      "price": 3500,
+      "quantity": 1,
+      "unit": "bottle",
+      "product_id": "1e88798d-7792-498c-8e54-9f0aa3ed65db",
+      "is_subscription_based": true,
+      "subscription_number_of_repeats": 12,
+      "subscription_frequency": "1m",
+      "active": true,
+      "position": 1,
+      "average_monthly_quantity": 1,
+      "dosage": "",
+      "dosage_quantity": null,
+      "dosage_unit": null,
+      "unit_price": 3500
+    },
+    "relationships": {
+      "product": {
+        "data": {
+          "id": "1e88798d-7792-498c-8e54-9f0aa3ed65db",
+          "type": "product"
+        }
+      }
+    }
+  }
+}

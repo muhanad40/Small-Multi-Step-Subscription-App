@@ -48,7 +48,8 @@ const ProductCard = (props: Product) => {
 				{summary}
 			</div>
 
-			{productVariants.map(productVariant => {
+			{productVariants.map(({ id }) => {
+				const variantData = state.productVariants[id];
 				const {
 					id: variantId,
 					attributes: {
@@ -56,7 +57,7 @@ const ProductCard = (props: Product) => {
 						price,
 						subscription_frequency,
 					}
-				} = productVariant;
+				} = variantData;
 
 				return (
 					<RadioInput
